@@ -20,19 +20,21 @@ criarFrase.addEventListener("click",function(){
     if (naoVazio==1){
 
         document.querySelector("#carta-gerada").innerHTML=""
+        frase.value= frase.value + " "          // AINDA NÃO CONSEGUI RESOLVER ESSA GAMBIARRA
     for (let index=0;index<frase.value.length;index+=1){
 
         if(frase.value[index]!=" "){
             palavra = palavra +frase.value[index];
-        } else{
+        } else if (index == frase.value.length-1 || frase.value[index]== " ") {
             let nova = document.createElement('span');
-            nova.innerHTML = palavra
+            nova.innerHTML = palavra;
             incluirEstilos(nova);
             document.querySelector("#carta-gerada").appendChild(nova)
 
             palavra="";
         }
-    }
+    } 
+    //criarEventos;
     } else{
         document.querySelector("#carta-gerada").innerHTML=""
         console.log("passou aqui")
@@ -56,7 +58,19 @@ function incluirEstilos(nova){
         let z= Math.floor(Math.random() * grupoNotacao.length);
         let t= Math.floor(Math.random() * grupoInclinacao.length);
         console.log(x +y+z+t)
-        nova.classList = grupoEstilo[x] +" "+ grupoTamanho[y] +" "
+        nova.classList = "item " + grupoEstilo[x] +" "+ grupoTamanho[y] +" "
                     + grupoNotacao[z]+ " " + grupoInclinacao[t];
     
                 }
+
+// function criarEventos(){
+//     let todaAFrase = document.querySelectorAll(".")
+//     for (let i = 0; i < todaAFrase.length; i+=1) {
+//         (function(i) {
+//         todaAFrase[i].addEventListener("click", function() {
+//             incluirEstilos(todaAFrase[i]);
+//             console.log("passou nessa parte")
+//          })
+//         })(i);
+//   }
+//   }
