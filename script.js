@@ -13,10 +13,18 @@ criarFrase.addEventListener("click",function(){
     console.log(frase.value);
     let palavra= "";
     for (let index=0;index<frase.value.length;index+=1){
+        if (frase.value[index]!=" "|| frase.value==null){
+            var naoVazio = 1;
+        }
+    }
+    if (naoVazio==1){
+
+        document.querySelector("#carta-gerada").innerHTML=""
+    for (let index=0;index<frase.value.length;index+=1){
+
         if(frase.value[index]!=" "){
             palavra = palavra +frase.value[index];
         } else{
-            palavra = palavra+ " ";
             let nova = document.createElement('span');
             nova.innerHTML = palavra
             incluirEstilos(nova);
@@ -24,6 +32,14 @@ criarFrase.addEventListener("click",function(){
 
             palavra="";
         }
+    }
+    } else{
+        document.querySelector("#carta-gerada").innerHTML=""
+        console.log("passou aqui")
+        let nova = document.createElement('span');
+        nova.innerHTML= "Por favor, digite o conteúdo da carta."
+        document.querySelector("#carta-gerada").appendChild(nova)
+        
     }
 })
 
