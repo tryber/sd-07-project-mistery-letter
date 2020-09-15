@@ -1,11 +1,3 @@
-// Grupos das classes
-
-// `newspaper`, `magazine1`, `magazine2` (Grupo estilo)
-// - `medium`, `big`, `reallybig` (Grupo tamanho)
-// - `rotateleft`, `rotateright` (Grupo rotação)
-// - `skewleft`, `skewright` (Grupo inclinação)
-
-
 let criarFrase = document.querySelector("#criar-carta");
 
 criarFrase.addEventListener("click",function(){
@@ -34,7 +26,7 @@ criarFrase.addEventListener("click",function(){
             contador +=1;
             palavra="";
         }
-    }
+    } 
     // document.querySelector("#carta-texto").value[document.querySelector("#carta-texto").value.length-1] = ""; 
     document.querySelector("#carta-contador").innerHTML = contador; //Incluindo contador
     //criarEventos;
@@ -46,6 +38,8 @@ criarFrase.addEventListener("click",function(){
         document.querySelector("#carta-gerada").appendChild(nova)
         
     }
+
+    criarEventos();
 })
 
 let grupoEstilo = ["newspaper", "magazine1", "magazine"];
@@ -56,24 +50,25 @@ let grupoInclinacao = ["skewleft", "skewright"];
 // INCLUIR ESTILOS
 
 function incluirEstilos(nova){
+    console.log("incluindo estilos");
     let x= Math.floor(Math.random() * grupoEstilo.length);
         let y= Math.floor(Math.random() * grupoTamanho.length);
         let z= Math.floor(Math.random() * grupoNotacao.length);
         let t= Math.floor(Math.random() * grupoInclinacao.length);
-        console.log(x +y+z+t)
         nova.classList = "item " + grupoEstilo[x] +" "+ grupoTamanho[y] +" "
                     + grupoNotacao[z]+ " " + grupoInclinacao[t];
     
                 }
 
-// function criarEventos(){
-//     let todaAFrase = document.querySelectorAll(".")
-//     for (let i = 0; i < todaAFrase.length; i+=1) {
-//         (function(i) {
-//         todaAFrase[i].addEventListener("click", function() {
-//             incluirEstilos(todaAFrase[i]);
-//             console.log("passou nessa parte")
-//          })
-//         })(i);
-//   }
-//   }
+function criarEventos(){
+    let todaAFrase = document.querySelectorAll(".item");
+    console.log("entrou no criar eventos")
+    for (let i = 0; i < todaAFrase.length; i+=1) {
+        (function(i) {
+        todaAFrase[i].addEventListener("click", function() {
+            incluirEstilos(todaAFrase[i]);
+            console.log("passou nessa parte")
+         })
+        })(i);
+  }
+  }
