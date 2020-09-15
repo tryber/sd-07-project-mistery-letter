@@ -21,7 +21,8 @@ criarFrase.addEventListener("click",function(){
 
         document.querySelector("#carta-gerada").innerHTML=""
         frase.value= frase.value + " "          // AINDA NÃO CONSEGUI RESOLVER ESSA GAMBIARRA
-    for (let index=0;index<frase.value.length;index+=1){
+        let contador = 0
+        for (let index=0;index<frase.value.length;index+=1){
 
         if(frase.value[index]!=" "){
             palavra = palavra +frase.value[index];
@@ -30,10 +31,10 @@ criarFrase.addEventListener("click",function(){
             nova.innerHTML = palavra;
             incluirEstilos(nova);
             document.querySelector("#carta-gerada").appendChild(nova)
-
+            contador +=1;
             palavra="";
         }
-    } 
+    } document.querySelector("#carta-contador").innerHTML = "Número de palavras: " + contador;
     //criarEventos;
     } else{
         document.querySelector("#carta-gerada").innerHTML=""
