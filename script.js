@@ -34,7 +34,9 @@ criarFrase.addEventListener("click",function(){
             contador +=1;
             palavra="";
         }
-    } document.querySelector("#carta-contador").innerHTML = "Número de palavras: " + contador;
+    }
+    // document.querySelector("#carta-texto").value[document.querySelector("#carta-texto").value.length-1] = ""; 
+    document.querySelector("#carta-contador").innerHTML = contador; //Incluindo contador
     //criarEventos;
     } else{
         document.querySelector("#carta-gerada").innerHTML=""
