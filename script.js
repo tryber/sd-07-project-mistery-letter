@@ -53,7 +53,6 @@ let z = Math.floor(Math.random() * grupoNotacao.length);
 let t = Math.floor(Math.random() * grupoInclinacao.length);
 console.log(x + ', ' + y + ', ' + z + ', ' + t);
 nova.className =
-'item ' +
 grupoEstilo[x] +
 ' ' +
 grupoTamanho[y] +
@@ -64,7 +63,7 @@ grupoInclinacao[t];
 }
 
 function criarEventos() {
-let todaAFrase = document.querySelectorAll('.item');
+let todaAFrase = document.querySelectorAll('span');
 for (let i = 0; i < todaAFrase.length; i += 1) {
 (function (i) {
 todaAFrase[i].addEventListener('click', function () {
