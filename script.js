@@ -25,7 +25,7 @@ function stylizeComponent(elementToStylize) {
   elementToStylize.classList.add(classTypes.styleGroup[randomNumber(3)]);
   elementToStylize.classList.add(classTypes.sizeGroup[randomNumber(3)]);
   elementToStylize.classList.add(classTypes.rotateGroup[randomNumber(2)]);
-  elementToStylize.classList.add(classTypes.skewGroup[randomNumber(3)]);
+  elementToStylize.classList.add(classTypes.skewGroup[randomNumber(2)]);
 }
 
 function destructLetter() {
