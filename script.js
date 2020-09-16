@@ -26,12 +26,9 @@ function aplicarEstilo(){
 }
 
 function gerarCartaMisteriosa() {
-  let linha = document.createElement('div')
-  let carta = document.createElement("span");
-  linha.classList.add('linha');
+  let carta = document.createElement("p");
   carta.innerHTML = textoDaCarta;
-  linha.appendChild(carta);
-  document.getElementById("carta-gerada").appendChild(linha);
+  document.getElementById("carta-gerada").appendChild(carta);
 }
 
 function validaInput(){
