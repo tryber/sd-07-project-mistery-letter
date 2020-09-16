@@ -27,7 +27,7 @@ function criarCarta() {
       cartaGerada.appendChild(span);
     });
   } else {
-    cartaGerada.innerText = 'Por favor, digite o conteúdo da carta';
+    cartaGerada.innerText = 'Por favor, digite o conteúdo da carta.';
   }
 }
 window.onload = function () {
