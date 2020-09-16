@@ -1,7 +1,7 @@
 .newspaper {
   background-color: antiquewhite;
   font-family: Times New Roman, Times, serif;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .magazine1 {
@@ -43,11 +43,11 @@
 }
 
 .skewleft {
-  transform: matrix(1, 0, 0.176327, 1, 0, 0);
+  transform: skewX(10deg);
 }
 
 .skewright {
-  transform: matrix(1, 0, -0.176327, 1, 0, 0);
+  transform: skewX(-10deg);
 }
 
 .linha {
