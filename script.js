@@ -3,12 +3,12 @@ let textoDaCarta;
 document.getElementById('carta-texto').addEventListener('keyup', () => {
   textoDaCarta = document
     .getElementById('carta-texto')
-    .value.replace(/(^|<\/?[^>]+>|\s+)([^\s<]+)/g,'$1<span class=texto>$2</span>');
+    .value.replace(/(^|<\/?[^>]+>|\s+)([^\s<]+)/g, '$1<span class=texto>$2</span>');
 });
 
 function numeroAleatorio() {
-  const numeroAleatorio = Math.floor(Math.random() * 3);
-  return numeroAleatorio;
+  const numero = Math.floor(Math.random() * 3);
+  return numero;
 }
 function aplicarEstilo() {
   const grupoEstilo = ['newspaper', 'magazine1', 'magazine2'];
@@ -45,5 +45,5 @@ document.getElementById('criar-carta').addEventListener('click', () => {
   }
   gerarCartaMisteriosa();
   aplicarEstilo();
-  textoDaCarta = null;
+  return textoDaCarta = null;
 });
