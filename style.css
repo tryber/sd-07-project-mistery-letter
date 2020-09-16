@@ -46,9 +46,9 @@
 }
 
 .skewleft{
-  transform: scaleX(10deg);
+  transform: matrix(1, 0, 0.176327, 1, 0, 0);
 }
 
 .skewright{
-  transform: scaleX(-10deg);
+  transform: matrix(1, 0, -0.176327, 1, 0, 0);
 }
