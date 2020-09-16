@@ -2,9 +2,8 @@ let criarFrase = document.querySelector("#criar-carta");
 
 criarFrase.addEventListener("click",function(){
     let frase = document.querySelector("#carta-texto")
-    console.log(frase.value);
     let palavra= "";
-
+    let tamanho = frase.value.length;
 
     for (let index=0;index<frase.value.length;index+=1){
         if (frase.value[index]!=" "|| frase.value==null){
@@ -16,17 +15,29 @@ criarFrase.addEventListener("click",function(){
         document.querySelector("#carta-gerada").innerHTML=""
         // frase.value= frase.value + " "          // AINDA NÃO CONSEGUI RESOLVER ESSA GAMBIARRA
         let contador = 0
-        for (let index=0;index<frase.value.length;index+=1){
+        for (let index=0;index<=frase.value.length;index+=1){
 
-        if(frase.value[index]!=" "){
-            palavra = palavra +frase.value[index];
-        } else if (index == frase.value.length-1 || frase.value[index]== " ") {
+        // if(frase.value[index]!=" "){
+        //     palavra = palavra +frase.value[index];
+        // } else if (index == tamanho || frase.value[index]== " ") {
+        //     let nova = document.createElement('span');
+        //     nova.innerHTML = palavra;
+        //     console.log(index)
+        //     incluirEstilos(nova);
+        //     document.querySelector("#carta-gerada").appendChild(nova)
+        //     contador +=1;
+        //     palavra="";
+        // }
+        if(index == tamanho || frase.value[index]== " "){
             let nova = document.createElement('span');
             nova.innerHTML = palavra;
+            console.log(index)
             incluirEstilos(nova);
             document.querySelector("#carta-gerada").appendChild(nova)
             contador +=1;
             palavra="";
+        } else if(frase.value[index]!=" "){
+            palavra = palavra +frase.value[index];
         }
     } 
     // document.querySelector("#carta-texto").value[document.querySelector("#carta-texto").value.length-1] = ""; 
