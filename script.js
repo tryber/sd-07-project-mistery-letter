@@ -18,7 +18,10 @@ function cardClick(){
 function createMagic(){
   let message = inputText.value;
   let letterCreate = document.getElementById('carta-gerada');
+  let countCards = document.getElementById('carta-contador');
+
   const errorMessage = 'Por favor, digite o conteúdo da carta.';
+  const totalMessage = 'Total de cartas: ';
 
   if(message === '' || message.trim() === '' ){
     letterCreate.innerText = errorMessage;
@@ -26,6 +29,7 @@ function createMagic(){
     let cards = message.split(' ');
 
     letterCreate.innerText = '';
+    countCards.innerText = totalMessage.concat('', cards.length);
 
     for(let i=0; i < cards.length; i += 1){
       let card = document.createElement('span');
