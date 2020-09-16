@@ -33,17 +33,17 @@
 }
 .rotateleft{
     transform: rotate(-5deg);
-    display: inline-block
+    display: inline-block;
 }
 .rotateright{
     transform: rotate(5deg);
-    display: inline-block
+    display: inline-block;
 }
 .skewleft{
-    transform: skewX(10deg)
-    display: inline-block
+    transform: skewX(10deg);
+    display: inline-block;
 }
 .skewright{
-    transform: skewX(-10deg)
-    display: inline-block
+    transform: skewX(-10deg);
+    display: inline-block;
 }
