@@ -5,14 +5,14 @@ function randomClasses() {
   const classes = [];
   classes.push(randomItem(['newspaper', 'magazine1', 'magazine2']));
   classes.push(randomItem(['medium', 'big', 'reallybig']));
-  classes.push(randomItem(['rotateleft', 'rotateright', ]));
-  classes.push(randomItem(['skewleft', 'skewright', ]));
+  classes.push(randomItem(['rotateleft', 'rotateright']));
+  classes.push(randomItem(['skewleft', 'skewright']));
   return classes.join(' ');
 }
 function criarCarta() {
   const cartaTexto = document.querySelector('#carta-texto');
   const cartaGerada = document.querySelector('#carta-gerada');
-  const words = cartaTexto.value.replace(/ {2}/g, '').replace(/\t/g, '').split(' ');
+  const words = cartaTexto.value.replace(/\t/g, ' ').split(' ');
   const letterCounter = document.querySelector('#carta-contador');
 
   letterCounter.innerText = `${words.length}`;
