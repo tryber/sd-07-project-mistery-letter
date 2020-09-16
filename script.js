@@ -39,10 +39,10 @@ document.querySelector('#carta-gerada').appendChild(nova);
 criarEventos();
 });
 
-let grupoEstilo = ['newspaper', 'magazine1', 'magazine2'];
-let grupoTamanho = ['medium', 'big', 'reallybig'];
-let grupoNotacao = ['rotateleft', 'rotateright'];
-let grupoInclinacao = ['skewleft', 'skewright'];
+const grupoEstilo = ['newspaper', 'magazine1', 'magazine2'];
+const grupoTamanho = ['medium', 'big', 'reallybig'];
+const grupoNotacao = ['rotateleft', 'rotateright'];
+const grupoInclinacao = ['skewleft', 'skewright'];
 
 // INCLUIR ESTILOS
 
