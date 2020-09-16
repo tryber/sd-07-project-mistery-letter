@@ -30,6 +30,7 @@ function eventListenerWords() {
 function createLetter() {
   if (inputText.value.trim() !== '') {
     const letterPrhase = inputText.value.split(' ');
+    document.querySelector('#titulo-carta-contador').innerText = 'Quantidade de Palavras';
     const wordCountShow = document.querySelector('#carta-contador');
     const wordCount = letterPrhase.length;
     wordCountShow.innerText = wordCount;
