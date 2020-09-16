@@ -49,3 +49,10 @@ span{
 .skewright{
     transform: skewX(-10deg);
 }
+#fundo{
+    width: fit-content;
+    height: 250px;
+    border-radius: 25px;
+    background-color: white;
+    padding: 20px
+}
