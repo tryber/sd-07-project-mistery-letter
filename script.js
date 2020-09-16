@@ -1,50 +1,55 @@
 
-// Define constants
-const button = document.querySelector('#criar-carta');
-const classRotation = ['rotateleft', 'rotateright'];
-const classInclination = ['skewleft', 'skewright'];
-const classSize = ['medium', 'big', 'reallybig'];
-const classStyle = ['newspaper', 'magazine1', 'magazine2'];
-const paragraph = document.querySelector('#carta-gerada');
-const inputText = document.querySelector('#carta-texto');
-const wordCountShow = document.querySelector('#carta-contador');
+window.onload = function (){
+  // Define constants
+  const button = document.querySelector('#criar-carta');
+  const classRotation = ['rotateleft', 'rotateright'];
+  const classInclination = ['skewleft', 'skewright'];
+  const classSize = ['medium', 'big', 'reallybig'];
+  const classStyle = ['newspaper', 'magazine1', 'magazine2'];
+  const paragraph = document.querySelector('#carta-gerada');
+  const inputText = document.querySelector('#carta-texto');
+  const wordCountShow = document.querySelector('#carta-contador');
+  let wordCount = 0;
 
-function styleText(event) {
-  // Random constat to get numbers on arrays class
-  const rotationClassValue = classRotation[Math.round(Math.random() * 1)];
-  const inclinationClassValue = classInclination[Math.round(Math.random() * 1)];
-  const classSizeValue = classSize[Math.round(Math.random() * 2)];
-  const classStyleValue = classStyle[Math.round(Math.random() * 2)];
+  function styleText(event) {
+    // Random constat to get numbers on arrays class
+    const rotationClassValue = classRotation[Math.round(Math.random() * 1)];
+    const inclinationClassValue = classInclination[Math.round(Math.random() * 1)];
+    const classSizeValue = classSize[Math.round(Math.random() * 2)];
+    const classStyleValue = classStyle[Math.round(Math.random() * 2)];
 
-  event.className = `${rotationClassValue} ${inclinationClassValue} ${classSizeValue} ${classStyleValue}`;
-}
-
-function eventListenerWords() {
-  const words = document.querySelectorAll('#words');
-
-  for (let index = 0; index < words.length; index += 1) {
-    words[index].addEventListener('click', function () {
-      styleText(words[index]);
-    });
+    event.className = `${rotationClassValue} ${inclinationClassValue} ${classSizeValue} ${classStyleValue}`;
   }
-}
 
-function createLetter() {
-  if (inputText.innerText !== "") {
-    const letterPrhase = inputText.value.split(' ');
-    for (let index = 0; index < letterPrhase.length; index += 1) {
-      const span = document.createElement('span');
-      span.id = 'words';
-      paragraph.appendChild(span);
-      paragraph.lastElementChild.innerText = letterPrhase[index];
-      styleText(paragraph.lastElementChild);
+  function eventListenerWords() {
+    const words = document.querySelectorAll('#words');
+
+    for (let index = 0; index < words.length; index += 1) {
+      words[index].addEventListener('click', function () {
+        styleText(words[index]);
+      });
     }
-  
-    wordCountShow.innerText = letterPrhase.length;
-    eventListenerWords();
-  } else {
-    paragraph.innerText = 'Por favor, digite o conteúdo da carta.';
   }
+
+  function createLetter() {
+    if (inputText.value !== '') {
+      const letterPrhase = inputText.value.split(' ');
+      wordCount += letterPrhase.length;
+      wordCountShow.innerText = wordCount;
+
+      for (let index = 0; index < letterPrhase.length; index += 1) {
+        const span = document.createElement('span');
+        span.id = 'words';
+        paragraph.appendChild(span);
+        paragraph.lastElementChild.innerText = letterPrhase[index];
+        styleText(paragraph.lastElementChild);
+      }
+      eventListenerWords();
+    } else {
+      paragraph.innerText = 'Por favor, digite o conteúdo da carta.';
+    }
+  }
+
+  button.addEventListener('click', createLetter);
 }
 
-button.addEventListener('click', createLetter);
