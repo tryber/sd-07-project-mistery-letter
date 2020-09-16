@@ -12,7 +12,7 @@ function randomClasses() {
 function criarCarta() {
   const cartaTexto = document.querySelector('#carta-texto');
   const cartaGerada = document.querySelector('#carta-gerada');
-  const words = cartaTexto.value.replace(/\t/g, '').split(' ');
+  const words = cartaTexto.value.replace(/  /g, '').replace(/\t/g, ''). split(' ');
 
   cartaGerada.innerHTML = '';
 
