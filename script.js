@@ -39,9 +39,9 @@ document.querySelector('#carta-gerada').appendChild(nova);
 criarEventos();
 });
 
-const grupoEstilo = ['newspaper', 'magazine1', 'magazine2',''];
-const grupoTamanho = ['medium', 'big', 'reallybig',''];
-const grupoNotacao = ['rotateleft', 'rotateright', ''];
+const grupoEstilo = ['newspaper', 'magazine1', 'magazine2'];
+const grupoTamanho = ['medium', 'big', 'reallybig'];
+const grupoNotacao = ['rotateleft', 'rotateright'];
 const grupoInclinacao = ['skewleft', 'skewright',''];
 
 // INCLUIR ESTILOS
