@@ -26,7 +26,7 @@ buttonCreateLetter.addEventListener('click', function () {
     document.querySelector('#carta-gerada').innerText = ('Por favor, digite o conteúdo da carta.');
   } else {
     cartaGerada.innerHTML = '';
-    const arrayLetterText = letterText.split(' ');    
+    const arrayLetterText = letterText.split(' ');
     let wordCount = 0;
     for (let index = 0; index < arrayLetterText.length; index += 1) {
       if (arrayLetterText[index] !== '') {
@@ -34,7 +34,7 @@ buttonCreateLetter.addEventListener('click', function () {
         wordCount += 1;
       }
     }
-    document.querySelector('#carta-contador').innerText = `Quantidade de palavras: ${wordCount}`;
+    document.querySelector('#carta-contador').innerText = wordCount;
   }
 });
 
