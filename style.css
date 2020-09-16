@@ -28,7 +28,7 @@
   font-size: 40px;
   padding: 15px;
 }
-.rotataleft {
+.rotateleft {
   transform: rotate(-5deg);
 }
 .rotateright {

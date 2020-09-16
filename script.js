@@ -16,7 +16,7 @@ function setRandomStyles(word) {
 function criarFraseFeia() {
   const fraseUsuario = document.querySelector('#carta-texto')
   if (fraseUsuario.value.length == 0){
-    carta.innerHTML = 'Por favor, digite o conteúdo da carta.'
+    carta.innerHTML = 'por favor, digite o conteúdo da carta.'
   } else {
       const arrayWords = fraseUsuario.value.split(" ")
       contador.innerHTML = arrayWords.length
