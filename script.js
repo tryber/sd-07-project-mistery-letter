@@ -11,7 +11,7 @@ var naoVazio = 1;
 }
 }
 if (naoVazio == 1) {
-// document.querySelector('#carta-gerada').innerHTML = '';
+document.querySelector('#carta-gerada').innerHTML = '';
 
 let contador = 0;
 for (let index = 0; index <= frase.value.length; index += 1) {
