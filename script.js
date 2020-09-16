@@ -1,6 +1,7 @@
 let textoDaCarta;
+let arrayCarta = [];
 // https://stackoverflow.com/a/50135988 fonte .replace()
-document.getElementById('carta-texto').addEventListener('keyup', () => {
+document.getElementById('carta-texto').addEventListener('keydown', (e) => {
   textoDaCarta = document.getElementById('carta-texto').value.replace(/(^|<\/?[^>]+>|\s+)([^\s<]+)/g, '$1<span>$2</span>');
 });
 
