@@ -11,7 +11,7 @@ var naoVazio = 1;
 }
 }
 if (naoVazio == 1) {
-document.querySelector('#carta-gerada').innerHTML = '';
+// document.querySelector('#carta-gerada').innerHTML = '';
 
 let contador = 0;
 for (let index = 0; index <= frase.value.length; index += 1) {
@@ -65,7 +65,6 @@ grupoInclinacao[t];
 
 function criarEventos() {
 let todaAFrase = document.querySelectorAll('.item');
-// console.log(todaAFrase.innerHTML)
 for (let i = 0; i < todaAFrase.length; i += 1) {
 (function (i) {
 todaAFrase[i].addEventListener('click', function () {
