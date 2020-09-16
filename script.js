@@ -1,4 +1,8 @@
 const createLetterButton = document.getElementById('criar-carta');
+const styleGroup = ['newspaper', 'magazine1', 'magazine2'];
+const sizeGroup = ['medium', 'big', 'reallybig'];
+const rotateGroup = ['rotateleft', 'rotateright'];
+const tiltgroup = ['skewleft', 'skewright'];
 
 function generateLetterWord() {
   const letterWords = document.getElementById('carta-texto').value.trim().split(' ');
@@ -14,4 +18,19 @@ function generateLetterWord() {
   }
 }
 
+function setRandomClasses() {
+  const spanList = document.getElementsByTagName('span');
+  for (let i = 0; i < spanList.length; i += 1) {
+    const j = Math.floor(Math.random() * styleGroup.length);
+    const k = Math.floor(Math.random() * sizeGroup.length);
+    const l = Math.floor(Math.random() * rotateGroup.length);
+    const m = Math.floor(Math.random() * tiltgroup.length);
+    spanList[i].classList.add(styleGroup[j]);
+    spanList[i].classList.add(sizeGroup[k]);
+    spanList[i].classList.add(rotateGroup[l]);
+    spanList[i].classList.add(tiltgroup[m]);
+  }
+}
+
 createLetterButton.addEventListener('click', generateLetterWord);
+createLetterButton.addEventListener('click', setRandomClasses);
