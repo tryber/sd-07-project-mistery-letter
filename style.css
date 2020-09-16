@@ -1,4 +1,12 @@
 
+.magic{
+  text-align: center;
+}
+
+span{
+  display: inline-block;
+}
+
 .newspaper{
   background-color :  antiquewhite;
   font-family : 'Times New Roman';
@@ -14,7 +22,7 @@
 }
 
 .magazine2{
-  background-image : 'images/pink-pattern.png';
+  background-image : url("images/pink-pattern.png");
   color : fuchsia;
   font-family : 'Verdana';
   font-weight : 900;
