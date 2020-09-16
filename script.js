@@ -25,6 +25,7 @@ function aplicarEstilo(){
 function gerarCartaMisteriosa() {
   let linha = document.createElement('br')
   let carta = document.createElement("span");
+  carta.id = "carta-gerada";
   carta.innerHTML = textoDaCarta;
   document.getElementById("carta-gerada").appendChild(carta);
   document.getElementById('carta-gerada').appendChild(linha);
