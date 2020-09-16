@@ -18,7 +18,7 @@ function generateLetterWord() {
       letterBody.appendChild(word);
     }
   } else {
-      letterBody.innerText = 'Por favor, digite o conteúdo da carta.';
+    letterBody.innerText = 'Por favor, digite o conteúdo da carta.';
   }
   couterText.innerText = counter;
 }
