@@ -33,6 +33,10 @@ function createLetter() {
   }
 }
 
+function countLetter() {
+  countWord = stringToArray().length
+}
+
 
 const classTypes = {
   styleGroup: ['newspaper', 'magazine1', 'magazine2'],
@@ -47,3 +51,4 @@ const stylizedLetter = document.querySelector('#carta-gerada');
 const countWords = document.querySelector('#carta-contador');
 
 buttonGenerateLetter.addEventListener('click', createLetter)
+inputLetter.addEventListener('change', countLetter)
