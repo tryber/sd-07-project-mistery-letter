@@ -41,3 +41,14 @@
 .rotateright {
   transform: rotate(5deg);
 }
+
+.skewleft {
+  transform: skewX(10deg);
+}
+
+14 - Crie a classe `skewleft`.
+
+  Pontos importantes:
+
+    * Defina as propriedades:
+      - `transform` com o valor `skewX(10deg)`;
