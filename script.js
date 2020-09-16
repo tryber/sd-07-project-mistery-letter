@@ -12,7 +12,7 @@ criarFrase.addEventListener("click",function(){
     }
     if (naoVazio==1){
 
-        // document.querySelector("#carta-gerada").innerHTML=""
+        document.querySelector("#carta-gerada").innerHTML=""
         
         let contador = 0
         for (let index=0;index<=frase.value.length;index+=1){
@@ -21,6 +21,7 @@ criarFrase.addEventListener("click",function(){
             let nova = document.createElement('span');
             nova.innerHTML = palavra;
             incluirEstilos(nova);
+            console.log(nova.classList)
             document.querySelector("#carta-gerada").appendChild(nova)
             contador +=1;
             palavra="";
@@ -54,13 +55,14 @@ function incluirEstilos(nova){
         let y= Math.floor(Math.random() * grupoTamanho.length);
         let z= Math.floor(Math.random() * grupoNotacao.length);
         let t= Math.floor(Math.random() * grupoInclinacao.length);
-        nova.classList = "item " + grupoEstilo[x] +" "+ grupoTamanho[y] +" "
+        nova.classList = "item "+ grupoEstilo[x] +" "+ grupoTamanho[y] +" "
                     + grupoNotacao[z]+ " " + grupoInclinacao[t];
     
                 }
 
 function criarEventos(){
-    let todaAFrase = document.querySelectorAll(".item");
+    let todaAFrase = document.querySelectorAll(".item")
+    // console.log(todaAFrase.innerHTML)
     for (let i = 0; i < todaAFrase.length; i+=1) {
         (function(i) {
         todaAFrase[i].addEventListener("click", function() {
