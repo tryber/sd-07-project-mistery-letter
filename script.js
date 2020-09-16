@@ -24,8 +24,13 @@ function stylizeComponent(elementToStylize) {
   elementToStylize.classList.add(classTypes.skewGroup[randomNumber(3)]);
 }
 
+function destructLetter() {
+  stylizedLetter.innerHTML = ''
+}
+
 function createLetter() {
   let arrayText = stringToArray();
+  destructLetter()
 
   for (let index = 0; index < arrayText.length; index += 1) {
     const element = createSpan(arrayText[index])
@@ -35,7 +40,10 @@ function createLetter() {
 
 function countLetter() {
   countWord = stringToArray().length
+  countWords.textContent = String(countWord)
 }
+
+
 
 
 const classTypes = {
@@ -51,4 +59,4 @@ const stylizedLetter = document.querySelector('#carta-gerada');
 const countWords = document.querySelector('#carta-contador');
 
 buttonGenerateLetter.addEventListener('click', createLetter)
-inputLetter.addEventListener('change', countLetter)
+inputLetter.addEventListener('input', countLetter)
