@@ -3,10 +3,10 @@ function randomItem(array) {
 }
 function randomClasses() {
   const classes = [];
-  classes.push(randomItem(['newspaper','magazine1','magazine2']));
-  classes.push(randomItem(['medium','big','reallybig']));
-  classes.push(randomItem(['rotateleft','rotateright','']));
-  classes.push(randomItem(['skewleft','skewright','']));
+  classes.push(randomItem(['newspaper', 'magazine1', 'magazine2']));
+  classes.push(randomItem(['medium', 'big', 'reallybig']));
+  classes.push(randomItem(['rotateleft', 'rotateright', '']));
+  classes.push(randomItem(['skewleft', 'skewright', '']));
   return classes.join(' ');
 }
 function criarCarta() {
