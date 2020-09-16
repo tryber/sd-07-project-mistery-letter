@@ -15,18 +15,17 @@ function aplicarEstilo(){
     let grupoInclinacao = ['padrao','skewleft','skewright'];
     let grupoTamanho = ['medium','big','reallybig']
     document.querySelectorAll('span').forEach((item) =>{
-        if(item.classList[0] === 'texto'){
-            item.className = 'texto';
             item.classList.add(grupoEstilo[numeroAleatorio()]);
             item.classList.add(grupoTamanho[numeroAleatorio()]);
             item.classList.add(grupoRotacao[numeroAleatorio()]);
             item.classList.add(grupoInclinacao[numeroAleatorio()]);
-        }
     })
 }
 
 function gerarCartaMisteriosa() {
-  let carta = document.createElement("p");
+  let linha = document.createElement('div')
+  let carta = document.createElement("span");
+  linha.classList.add('linha');
   carta.innerHTML = textoDaCarta;
   document.getElementById("carta-gerada").appendChild(carta);
 }
