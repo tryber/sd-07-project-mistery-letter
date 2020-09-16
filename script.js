@@ -7,11 +7,13 @@ function generateLetter() {
       const wordSpan = document.createElement('span');
       wordSpan.innerText = wordsOfLetter[indexWord];
       wordSpan.style.display = 'inline-block';
+      wordSpan.style.margin = '5px';
+      wordSpan.addEventListener('click', applyNewRandomClass);
       applyRandomClass(wordSpan);
       document.getElementById('carta-gerada').appendChild(wordSpan);
     }
   } else {
-    alert('Por favor, digite o conteúdo da carta.');
+    document.getElementById('carta-gerada').innerHTML = 'Por favor, digite o conteúdo da carta.';
   }
 }
 
@@ -23,15 +25,22 @@ function applyRandomClass(element) {
   const allClassGroup = [classGroupStyle, classGroupLength, classGroupRotation, classGroupSkew];
 
   const quantityOfClass = Math.ceil(Math.random() * allClassGroup.length);
+  const classGroupApplied = [];
   for (let index = 0; index < quantityOfClass; index += 1) {
     let randomClassGroupIndex, randomClassIndex;
     do {
       randomClassGroupIndex = Math.floor(Math.random() * allClassGroup.length);
       randomClassIndex = Math.floor(Math.random() * allClassGroup[randomClassGroupIndex].length);
     }
-    while (element.classList.contains(allClassGroup[randomClassGroupIndex][randomClassIndex]));
+    while (classGroupApplied.includes(allClassGroup[randomClassGroupIndex]));
     element.classList.add(allClassGroup[randomClassGroupIndex][randomClassIndex]);
+    classGroupApplied.push(allClassGroup[randomClassGroupIndex]);
   }
+}
+
+function applyNewRandomClass(event) {
+  event.target.className = '';
+  applyRandomClass(event.target);
 }
 
 window.onload = function() {
