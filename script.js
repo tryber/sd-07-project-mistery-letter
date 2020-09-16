@@ -1,14 +1,21 @@
 function criarCarta() {
-  const cartaTexto = document.querySelector('#carta-texto') ;
+  const cartaTexto = document.querySelector('#carta-texto');
   const cartaGerada = document.querySelector('#carta-gerada');
-  let words = cartaTexto.value.split(' ');
-  words.forEach(word => {
-    const span = document.createElement('span');
+  const  words = cartaTexto.value.split(' ');
 
-    span.innerText = word;
-    cartaGerada.appendChild(span);
-  });
-};
+  cartaGerada.innerHTML = '';
+  
+  if (words.join('') === '') {
+    words.forEach((word) => {
+      const span = document.createElement('span');
+
+      span.innerText = word;
+      cartaGerada.appendChild(span);
+    });
+  } else {
+    cartaGerada.innerText = 'Por favor, digite o conteúdo da carta';
+  }
+}
 window.onload = function () {
   const criarCartaButton = document.querySelector('#criar-carta');
 
