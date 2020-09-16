@@ -11,8 +11,8 @@ function numeroAleatorio(){
 }
 function aplicarEstilo(){
     let grupoEstilo = ['newspaper','magazine1','magazine2'];
-    let grupoRotacao = ['padrao','rotateleft','rotateright'];
-    let grupoInclinacao = ['padrao','skewleft','skewright'];
+    let grupoRotacao = ['rotateleft','rotateleft','rotateright'];
+    let grupoInclinacao = ['skewleft','skewleft','skewright'];
     let grupoTamanho = ['medium','big','reallybig']
     document.querySelectorAll('span').forEach((item) =>{
             item.classList.add(grupoEstilo[numeroAleatorio()]);
@@ -30,18 +30,13 @@ function gerarCartaMisteriosa() {
   document.getElementById('carta-gerada').appendChild(linha);
 }
 
-function validaInput(){
-    document.getElementById('carta-texto').value = null;
-}
-
 document.getElementById("criar-carta").addEventListener("click", () => {
   if(document.querySelector('#carta-texto').value === ""){
-    return document.querySelector('#carta-gerada').innerText = 'Por favor, digite o conteúdo da carta.';
+    return document.querySelector('#carta-gerada').innerText = 'por favor, digite o conteúdo da carta.';
   }
-  if(document.getElementById('carta-gerada').innerText === 'Por favor, digite o conteúdo da carta.'){
+  if(document.getElementById('carta-gerada').innerText === 'por favor, digite o conteúdo da carta.'){
     document.getElementById('carta-gerada').innerText = "";
   }
-  validaInput();
   gerarCartaMisteriosa();
   aplicarEstilo();
   textoDaCarta = null;
