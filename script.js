@@ -6,18 +6,22 @@ function stringToArray() {
   let textOrigin = inputLetter.value;
   let arrayText = textOrigin.split(' ')
 
-  return arrayText
+  return arrayText[0] === '' ? 0 : arrayText;
 }
 
 function createSpan(textElement) {
   const spanElement = document.createElement('span')
   spanElement.textContent = textElement
   stylizeComponent(spanElement)
+  spanElement.addEventListener('click', () => {
+    stylizeComponent(spanElement)
+  })
 
   return spanElement
 }
 
 function stylizeComponent(elementToStylize) {
+  elementToStylize.className = ''
   elementToStylize.classList.add(classTypes.styleGroup[randomNumber(3)]);
   elementToStylize.classList.add(classTypes.sizeGroup[randomNumber(3)]);
   elementToStylize.classList.add(classTypes.rotateGroup[randomNumber(2)]);
@@ -32,15 +36,21 @@ function createLetter() {
   let arrayText = stringToArray();
   destructLetter()
 
-  for (let index = 0; index < arrayText.length; index += 1) {
-    const element = createSpan(arrayText[index])
-    stylizedLetter.appendChild(element)
+  if(arrayText === 0){
+    stylizedLetter.textContent = 'por favor, digite o conteúdo da carta.'
+  } else {
+    for (let index = 0; index < arrayText.length; index += 1) {
+      const element = createSpan(arrayText[index])
+      stylizedLetter.appendChild(element)
+    }
   }
+
+
 }
 
 function countLetter() {
   countWord = stringToArray().length
-  countWords.textContent = String(countWord)
+  countWords.textContent = countWord || "";
 }
 
 
