@@ -10,6 +10,10 @@ document.querySelector('#criar-carta').addEventListener('click', function () {
   const str = document.querySelector('#carta-texto').value.split(' ');
   const div = document.createElement('div');
   for (let index = 0; index < str.length; index += 1) {
+    if (str[index] === '') {
+      document.querySelector('#carta-gerada').innerText = 'Por favor, digite o conteúdo da carta.';
+      return;
+    }
     const word = document.createElement('span');
     word.innerText = str[index];
     word.classList.add(style[Math.floor(Math.random() * 3)]);
