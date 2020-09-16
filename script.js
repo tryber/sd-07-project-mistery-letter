@@ -37,7 +37,6 @@ criarFrase.addEventListener("click",function(){
         let nova = document.createElement('span');
         nova.innerHTML= "Por favor, digite o conteúdo da carta."
         document.querySelector("#carta-gerada").appendChild(nova)
-        
     }
 
     criarEventos();
@@ -55,6 +54,7 @@ function incluirEstilos(nova){
         let y= Math.floor(Math.random() * grupoTamanho.length);
         let z= Math.floor(Math.random() * grupoNotacao.length);
         let t= Math.floor(Math.random() * grupoInclinacao.length);
+        console.log (x+", "+y+", "+z+", "+t)
         nova.classList = "item "+ grupoEstilo[x] +" "+ grupoTamanho[y] +" "
                     + grupoNotacao[z]+ " " + grupoInclinacao[t];
     
