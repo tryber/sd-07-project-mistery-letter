@@ -42,11 +42,11 @@
   transform: rotate(5deg);
 }
 
-.skweleft {
+.skewleft {
   transform: matrix(1, 0, 0.176327, 1, 0, 0);
 }
 
-.skweright {
+.skewright {
   transform: matrix(1, 0, -0.176327, 1, 0, 0);
 }
 
