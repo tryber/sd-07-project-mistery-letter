@@ -43,9 +43,14 @@
 }
 
 .skweleft {
-  transform: skewX(10deg);
+  transform: matrix(1, 0, 0.176327, 1, 0, 0);
 }
 
 .skweright {
-  transform: skewX(-10deg);
+  transform: matrix(1, 0, -0.176327, 1, 0, 0);
+}
+
+.linha {
+    display: block;
+    margin-top: 35px;
 }
