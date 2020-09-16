@@ -14,20 +14,26 @@ function setRandomStyles(word) {
 }
 
 function criarFraseFeia() {
-  const fraseUsuario = document.querySelector('#carta-texto').value
-  const arrayWords = fraseUsuario.split(" ")
-  contador.innerHTML = arrayWords.length
-  carta.innerHTML = ''
-  for (let i = 0; i < arrayWords.length; i += 1) {
-    const word = document.createElement('span')
-    word.innerHTML = arrayWords[i]
-    setRandomStyles(word)
-    carta.appendChild(word)
-    carta.innerHTML += ' '
-  }
+  const fraseUsuario = document.querySelector('#carta-texto')
+  if (fraseUsuario.value.length == 0){
+    carta.innerHTML = 'Por favor, digite o conteúdo da carta.'
+  } else {
+      const arrayWords = fraseUsuario.value.split(" ")
+      contador.innerHTML = arrayWords.length
+      carta.innerHTML = ''
+      for (let i = 0; i < arrayWords.length; i += 1) {
+        const word = document.createElement('span')
+        word.innerHTML = arrayWords[i]
+        setRandomStyles(word)
+        carta.appendChild(word)
+        carta.innerHTML += ' '
+      }
+    }
 }
 
 const contador = document.querySelector('#carta-contador')
 
 const btn = document.querySelector('#criar-carta')
 btn.addEventListener('click', criarFraseFeia)
+
+/* console.log(fraseUsuario.value.length) */
