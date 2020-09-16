@@ -51,7 +51,7 @@ span{
 }
 #fundo{
     width: fit-content;
-    height: 250px;
+    height: fit-content;
     border-radius: 25px;
     background-color: white;
     padding: 20px

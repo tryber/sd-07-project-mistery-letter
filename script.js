@@ -52,14 +52,25 @@ let y = Math.floor(Math.random() * grupoTamanho.length);
 let z = Math.floor(Math.random() * grupoNotacao.length);
 let t = Math.floor(Math.random() * grupoInclinacao.length);
 console.log(x + ', ' + y + ', ' + z + ', ' + t);
-nova.className =
-grupoEstilo[x] +
-' ' +
-grupoTamanho[y] +
-' ' +
-grupoNotacao[z] +
-' ' +
-grupoInclinacao[t];
+let par = Math.ceil(Math.random() *2);
+if(par%2==0){
+    nova.className =
+    grupoEstilo[x] +
+    ' ' +
+    grupoTamanho[y] +
+    ' ' +
+    grupoNotacao[z] +
+    ' ' +
+    grupoInclinacao[t];
+}else{
+    nova.className =
+    grupoEstilo[x] +
+    ' ' +
+    grupoTamanho[y] +
+    ' ' +
+    grupoNotacao[z];
+}
+
 }
 
 function criarEventos() {
