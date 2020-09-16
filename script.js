@@ -2,7 +2,7 @@ const buttonCreateLetter = document.querySelector('#criar-carta');
 
 function createSpan(word) {
   const spanElement = document.createElement('span');
-  spanElement.innerText = ` ${word}`;
+  spanElement.innerText = `${word}`;
   return spanElement;
 }
 
