@@ -16,6 +16,7 @@ function setRandomStyles(word) {
 function criarFraseFeia() {
   const fraseUsuario = document.querySelector('#carta-texto').value
   const arrayWords = fraseUsuario.split(" ")
+  contador.innerHTML = arrayWords.length
   carta.innerHTML = ''
   for (let i = 0; i < arrayWords.length; i += 1) {
     const word = document.createElement('span')
@@ -25,6 +26,8 @@ function criarFraseFeia() {
     carta.innerHTML += ' '
   }
 }
+
+const contador = document.querySelector('#carta-contador')
 
 const btn = document.querySelector('#criar-carta')
 btn.addEventListener('click', criarFraseFeia)
