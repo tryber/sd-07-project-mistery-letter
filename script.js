@@ -23,21 +23,25 @@ function aplicarEstilo(){
 }
 
 function gerarCartaMisteriosa() {
-  let linha = document.createElement('div')
+  let linha = document.createElement('br')
   let carta = document.createElement("span");
-  linha.classList.add('linha');
   carta.innerHTML = textoDaCarta;
   document.getElementById("carta-gerada").appendChild(carta);
+  document.getElementById('carta-gerada').appendChild(linha);
 }
 
 function validaInput(){
-    document.getElementById('carta-texto').value = '';
+    document.getElementById('carta-texto').value = null;
 }
 
 document.getElementById("criar-carta").addEventListener("click", () => {
-  if(textoDaCarta === null){
-    document.getElementById('carta-texto').innerHTML = 'Por favor, digite o conteúdo da carta.'
+  if(document.querySelector('#carta-texto').value === ""){
+    return document.querySelector('#carta-gerada').innerText = 'Por favor, digite o conteúdo da carta.';
   }
+  if(document.getElementById('carta-gerada').innerText === 'Por favor, digite o conteúdo da carta.'){
+    document.getElementById('carta-gerada').innerText = "";
+  }
+  validaInput();
   gerarCartaMisteriosa();
   aplicarEstilo();
   textoDaCarta = null;
