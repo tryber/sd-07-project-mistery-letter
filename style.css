@@ -1,6 +1,6 @@
 .newspaper {
   background-color: antiquewhite;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Times New Roman, Times, serif;
   font-weight: bold;
 }
 
@@ -51,6 +51,6 @@
 }
 
 .linha {
-    display: block;
-    margin-top: 35px;
+  display: block;
+  margin-top: 35px;
 }
