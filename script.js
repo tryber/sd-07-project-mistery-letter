@@ -35,6 +35,9 @@ function validaInput(){
 }
 
 document.getElementById("criar-carta").addEventListener("click", () => {
+  if(textoDaCarta === null){
+    document.getElementById('carta-texto').innerHTML = 'Por favor, digite o conteúdo da carta.'
+  }
   gerarCartaMisteriosa();
   aplicarEstilo();
   textoDaCarta = null;
