@@ -7,6 +7,7 @@ const tiltgroup = ['skewleft', 'skewright'];
 function generateLetterWord() {
   const letterWords = document.getElementById('carta-texto').value.trim().split(' ');
   const letterBody = document.getElementById('carta-gerada');
+  letterBody.innerText = '';
   if (letterWords.length > 1 && letterWords[0] !== '') {
     for (let i = 0; i < letterWords.length; i += 1) {
       const word = document.createElement('span');
