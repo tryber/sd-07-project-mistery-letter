@@ -46,9 +46,6 @@
   transform: skewX(10deg);
 }
 
-14 - Crie a classe `skewleft`.
-
-  Pontos importantes:
-
-    * Defina as propriedades:
-      - `transform` com o valor `skewX(10deg)`;
+.skewright {
+  transform: skewX(-10deg);
+}
