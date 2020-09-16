@@ -46,7 +46,7 @@ function generateLetter() {
   const wordsOfLetter = (document.getElementById('carta-texto').value).toString().trim().split(' ');
   if (wordsOfLetter[0] !== '') {
     document.getElementById('carta-gerada').innerHTML = '';
-    let countWords = generateWordSpan(wordsOfLetter);
+    const countWords = generateWordSpan(wordsOfLetter);
     document.getElementById('carta-contador').innerText = countWords.toString();
   } else {
     document.getElementById('carta-gerada').innerHTML = 'Por favor, digite o conteúdo da carta.';
