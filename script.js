@@ -13,5 +13,5 @@ document.querySelector("#criar-carta").addEventListener("click", function () {
     word.classList.add(inc[Math.floor(Math.random() * 2)])
     document.querySelector("#carta-gerada").appendChild(word)
   }
-
+  document.querySelector('#carta-contador').innerText = str.length;
 });
