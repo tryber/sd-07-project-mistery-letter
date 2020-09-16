@@ -8,6 +8,7 @@ document.querySelector("#criar-carta").addEventListener("click", function () {
     return;
   }
   const str = document.querySelector("#carta-texto").value.split(" ");
+  const div = document.createElement('div');
   for (let index = 0; index < str.length; index += 1) {
     const word = document.createElement('span');
     word.innerText = str[index]
@@ -15,7 +16,8 @@ document.querySelector("#criar-carta").addEventListener("click", function () {
     word.classList.add(size[Math.floor(Math.random() * 3)]) 
     word.classList.add(rot[Math.floor(Math.random() * 2)]) 
     word.classList.add(inc[Math.floor(Math.random() * 2)])
-    document.querySelector("#carta-gerada").appendChild(word)
+    div.appendChild(word)
   }
+  document.querySelector("#carta-gerada").innerHTML = div.innerHTML;
   document.querySelector('#carta-contador').innerText = str.length;
 });
