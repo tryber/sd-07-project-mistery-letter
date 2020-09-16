@@ -11,8 +11,16 @@ function getNumber(number){
   return  Math.floor( Math.random() * Math.floor(number));
 }
 
-function cardClick(){
-  console.log('oin');
+function cardClick(e){
+  let card = e.srcElement;
+
+  card.className = '';
+
+  card.classList.add(styleGroup[getNumber(styleGroup.length)]);
+  card.classList.add(sizeGroup[getNumber(sizeGroup.length)]);
+  card.classList.add(rotationGroup[getNumber(rotationGroup.length)]);
+  card.classList.add(degreeGroup[getNumber(degreeGroup.length)]);
+
 }
 
 function createMagic(){

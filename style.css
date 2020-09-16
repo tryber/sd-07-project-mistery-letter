@@ -9,6 +9,10 @@ p{
 
 span{
   display: inline-block;
+
+  cursor: pointer;
+
+  margin: 1em;
 }
 
 .newspaper{
