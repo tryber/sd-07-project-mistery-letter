@@ -1,9 +1,7 @@
 let textoDaCarta;
 // https://stackoverflow.com/a/50135988 fonte .replace()
 document.getElementById('carta-texto').addEventListener('keyup', () => {
-  textoDaCarta = document
-    .getElementById('carta-texto')
-    .value.replace(/(^|<\/?[^>]+>|\s+)([^\s<]+)/g, '$1<span class=texto>$2</span>');
+  textoDaCarta = document.getElementById('carta-texto').value.replace(/(^|<\/?[^>]+>|\s+)([^\s<]+)/g, '$1<span>$2</span>');
 });
 
 function numeroAleatorio() {
@@ -45,5 +43,5 @@ document.getElementById('criar-carta').addEventListener('click', () => {
   }
   gerarCartaMisteriosa();
   aplicarEstilo();
-  return textoDaCarta = null;
+  return (textoDaCarta = null);
 });
