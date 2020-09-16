@@ -25,6 +25,8 @@ function createMagic(){
   }else{
     let cards = message.split(' ');
 
+    letterCreate.innerText = '';
+
     for(let i=0; i < cards.length; i += 1){
       let card = document.createElement('span');
 
