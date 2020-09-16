@@ -1,9 +1,11 @@
 let criarFrase = document.querySelector("#criar-carta");
 
 criarFrase.addEventListener("click",function(){
-    let frase =document.querySelector("#carta-texto")
+    let frase = document.querySelector("#carta-texto")
     console.log(frase.value);
     let palavra= "";
+
+
     for (let index=0;index<frase.value.length;index+=1){
         if (frase.value[index]!=" "|| frase.value==null){
             var naoVazio = 1;
@@ -12,7 +14,7 @@ criarFrase.addEventListener("click",function(){
     if (naoVazio==1){
 
         document.querySelector("#carta-gerada").innerHTML=""
-        frase.value= frase.value + " "          // AINDA NÃO CONSEGUI RESOLVER ESSA GAMBIARRA
+        // frase.value= frase.value + " "          // AINDA NÃO CONSEGUI RESOLVER ESSA GAMBIARRA
         let contador = 0
         for (let index=0;index<frase.value.length;index+=1){
 
