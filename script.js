@@ -52,15 +52,15 @@ function incluirEstilos(nova) {
   let z = Math.floor(Math.random() * grupoNotacao.length);
   let t = Math.floor(Math.random() * grupoInclinacao.length);
   console.log(x + ", " + y + ", " + z + ", " + t);
-  nova.classList =
-    "item " +
-    grupoEstilo[x] +
-    " " +
-    grupoTamanho[y] +
-    " " +
-    grupoNotacao[z] +
-    " " +
-    grupoInclinacao[t];
+  nova.className = `${grupoEstilo[x]} ${grupoTamanho[y]} ${grupoNotacao[z]} ${grupoInclinacao[t]}`;
+  // "item " +
+  // grupoEstilo[x] +
+  // " " +
+  // grupoTamanho[y] +
+  // " " +
+  // grupoNotacao[z] +
+  // " " +
+  // grupoInclinacao[t];
 }
 
 function criarEventos() {
