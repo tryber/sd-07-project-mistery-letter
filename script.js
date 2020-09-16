@@ -20,7 +20,7 @@ function generateLetterWord() {
   } else {
       letterBody.innerText = 'Por favor, digite o conteúdo da carta.';
   }
-  couterText.innerText = `Número de palavras: ${counter}`;
+  couterText.innerText = counter;
 }
 
 function setRandomClasses() {
