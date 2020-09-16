@@ -3,6 +3,10 @@ const size = ['medium', 'big', 'reallybig'];
 const rot = ['rotateleft', 'rotateright'];
 const inc = ['skewleft', 'skewright'];
 document.querySelector("#criar-carta").addEventListener("click", function () {
+  if(document.querySelector("#carta-texto").value === ''){
+    document.querySelector('#carta-contador').innerText = 'por favor, digite o conteúdo da carta.'
+    return;
+  }
   const str = document.querySelector("#carta-texto").value.split(" ");
   for (let index = 0; index < str.length; index += 1) {
     const word = document.createElement('span');
