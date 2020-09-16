@@ -27,7 +27,7 @@ function applyNewRandomClass(event) {
 
 function generateWordSpan(wordsOfLetter) {
   let countWords = 0;
-  for (let indexWord in wordsOfLetter) {
+  for (let indexWord = 0; indexWord < wordsOfLetter.length; indexWord += 1) {
     if (wordsOfLetter[indexWord] !== '') {
       const wordSpan = document.createElement('span');
       wordSpan.innerText = wordsOfLetter[indexWord];
@@ -56,4 +56,4 @@ function generateLetter() {
 
 window.onload = function () {
   document.getElementById('criar-carta').addEventListener('click', generateLetter);
-}
+};
