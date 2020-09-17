@@ -47,7 +47,7 @@ function adicionaSpam() {
       span.classList.add(aleatorio4());
       span.innerText = input.value.split(" ")[i];
 
-      contador.innerHTML = "Quantidade de palavras: " + (i + 1);
+      contador.innerHTML = i + 1;
     }
   }
 }
