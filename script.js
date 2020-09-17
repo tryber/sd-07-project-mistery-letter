@@ -26,6 +26,8 @@ let button = document.querySelector("#criar-carta");
 let texto = document.querySelector("#carta-gerada");
 let input = document.querySelector("#carta-texto");
 
+let contador = document.querySelector("#carta-contador");
+
 function adicionaSpam() {
   let re = new RegExp("[ ]+");
   if (input.value == "" || input.value.search(re) == 0) {
@@ -42,6 +44,8 @@ function adicionaSpam() {
       span.classList.add(aleatorio3());
       span.classList.add(aleatorio4());
       span.innerText = input.value.split(" ")[i];
+
+      contador.innerHTML = "Quantidade de palavras: " + (i + 1);
     }
   }
 }
