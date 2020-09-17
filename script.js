@@ -1,30 +1,3 @@
-let button = document.querySelector("#criar-carta");
-let texto = document.querySelector("#carta-gerada");
-let input = document.querySelector("#carta-texto");
-
-function adicionaSpam() {
-  let re = new RegExp("[ ]+");
-  if (input.value == "" || input.value.search(re) == 0) {
-    texto.innerText = "Por favor, digite o conteúdo da carta.";
-  }
-
-  for (let i = 0; i < input.value.split(" ").length; i += 1) {
-    let span = document.createElement("span");
-    texto.appendChild(span);
-    span.style.display = "inline-block";
-    span.style.margin = "5px";
-    span.classList.add(aleatorio1());
-    span.classList.add(aleatorio2());
-    span.classList.add(aleatorio3());
-    span.classList.add(aleatorio4());
-    span.innerText = input.value.split(" ")[i];
-  }
-}
-
-button.addEventListener("click", adicionaSpam);
-
-//-------------------------------------------------------
-
 function aleatorio1() {
   let grupo1 = ["newspaper", "magazine1", "magazine2"];
   let random = Math.round(Math.random() * 2);
@@ -48,3 +21,41 @@ function aleatorio4() {
   let random = Math.round(Math.random() * 1);
   return grupo4[random];
 }
+
+let button = document.querySelector("#criar-carta");
+let texto = document.querySelector("#carta-gerada");
+let input = document.querySelector("#carta-texto");
+
+function adicionaSpam() {
+  let re = new RegExp("[ ]+");
+  if (input.value == "" || input.value.search(re) == 0) {
+    texto.innerText = "Por favor, digite o conteúdo da carta.";
+  } else {
+    for (let i = 0; i < input.value.split(" ").length; i += 1) {
+      let span = document.createElement("span");
+      texto.appendChild(span);
+      span.style.display = "inline-block";
+      span.style.margin = "5px";
+      span.classList.add("spam");
+      span.classList.add(aleatorio1());
+      span.classList.add(aleatorio2());
+      span.classList.add(aleatorio3());
+      span.classList.add(aleatorio4());
+      span.innerText = input.value.split(" ")[i];
+    }
+  }
+}
+
+button.addEventListener("click", adicionaSpam);
+
+//-------------------------------------------------------
+
+addEventListener("click", function (event) {
+  if (event.target.classList.contains("spam")) {
+    event.target.className = "spam";
+    event.target.classList.add(aleatorio1());
+    event.target.classList.add(aleatorio2());
+    event.target.classList.add(aleatorio3());
+    event.target.classList.add(aleatorio4());
+  }
+});
