@@ -11,6 +11,8 @@ function adicionaSpam() {
   for (let i = 0; i < input.value.split(" ").length; i += 1) {
     let span = document.createElement("span");
     texto.appendChild(span);
+    span.style.display = "inline-block";
+    span.style.margin = "5px";
     span.innerText = input.value.split(" ")[i] + " ";
   }
 }
