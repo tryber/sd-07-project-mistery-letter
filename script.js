@@ -13,10 +13,38 @@ function adicionaSpam() {
     texto.appendChild(span);
     span.style.display = "inline-block";
     span.style.margin = "5px";
-    span.innerText = input.value.split(" ")[i] + " ";
+    span.classList.add(aleatorio1());
+    span.classList.add(aleatorio2());
+    span.classList.add(aleatorio3());
+    span.classList.add(aleatorio4());
+    span.innerText = input.value.split(" ")[i];
   }
 }
 
 button.addEventListener("click", adicionaSpam);
 
 //-------------------------------------------------------
+
+function aleatorio1() {
+  let grupo1 = ["newspaper", "magazine1", "magazine2"];
+  let random = Math.round(Math.random() * 2);
+  return grupo1[random];
+}
+
+function aleatorio2() {
+  let grupo2 = ["medium", "big", "reallybig"];
+  let random = Math.round(Math.random() * 2);
+  return grupo2[random];
+}
+
+function aleatorio3() {
+  let grupo3 = ["rotateleft", "rotateright"];
+  let random = Math.round(Math.random() * 1);
+  return grupo3[random];
+}
+
+function aleatorio4() {
+  let grupo4 = ["skewleft", "skewright"];
+  let random = Math.round(Math.random() * 1);
+  return grupo4[random];
+}
