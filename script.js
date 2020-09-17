@@ -3,8 +3,8 @@ let texto = document.querySelector("#carta-gerada");
 let input = document.querySelector("#carta-texto");
 
 function adicionaSpam() {
-  let re = new RegExp("[0-9A-z] +[A-z0-9 ]+");
-  if (input.value == "" || input.value.search(re) != 0) {
+  let re = new RegExp("[ ]+");
+  if (input.value == "" || input.value.search(re) == 0) {
     texto.innerText = "Por favor, digite o conteúdo da carta.";
   }
 
