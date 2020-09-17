@@ -40,7 +40,6 @@ function adicionaSpam() {
       texto.appendChild(span);
       span.style.display = "inline-block";
       span.style.margin = "5px";
-      span.classList.add("spam");
       span.classList.add(aleatorio1());
       span.classList.add(aleatorio2());
       span.classList.add(aleatorio3());
@@ -57,8 +56,8 @@ button.addEventListener("click", adicionaSpam);
 //-------------------------------------------------------
 
 addEventListener("click", function (event) {
-  if (event.target.classList.contains("spam")) {
-    event.target.className = "spam";
+  if (event.target.style.display === "inline-block") {
+    event.target.className = "";
     event.target.classList.add(aleatorio1());
     event.target.classList.add(aleatorio2());
     event.target.classList.add(aleatorio3());
@@ -69,7 +68,7 @@ addEventListener("click", function (event) {
 //------------------------------------------------------
 
 function limpaTexto() {
-  let span = document.querySelectorAll(".spam");
+  let span = document.querySelectorAll("span");
   for (let i = 0; i < span.length; i += 1) {
     texto.removeChild(span[i]);
   }
