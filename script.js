@@ -33,6 +33,8 @@ function adicionaSpam() {
   if (input.value == "" || input.value.search(re) == 0) {
     texto.innerText = "Por favor, digite o conteúdo da carta.";
   } else {
+    limpaTexto();
+
     for (let i = 0; i < input.value.split(" ").length; i += 1) {
       let span = document.createElement("span");
       texto.appendChild(span);
@@ -63,3 +65,12 @@ addEventListener("click", function (event) {
     event.target.classList.add(aleatorio4());
   }
 });
+
+//------------------------------------------------------
+
+function limpaTexto() {
+  let span = document.querySelectorAll(".spam");
+  for (let i = 0; i < span.length; i += 1) {
+    texto.removeChild(span[i]);
+  }
+}
