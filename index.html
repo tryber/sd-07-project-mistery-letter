@@ -84,7 +84,17 @@
                 let inclinacao = parseInt(Math.random()*2);
                 aux.innerText = conteudosplit[i];
                 aux.className = estilos[estilo]+" "+tamanhos[tamanho]+" "+rotacoes[rotacao]+" "+inclinacoes[inclinacao];
+                
                 carta.appendChild(aux);
+
+                carta.lastElementChild.addEventListener("click",function(event) {
+                    let aux = document.createElement("span");
+                    let estilo = parseInt(Math.random()*3);
+                    let tamanho = parseInt(Math.random()*3);
+                    let rotacao = parseInt(Math.random()*2);
+                    let inclinacao = parseInt(Math.random()*2);                    
+                    event.target.className = estilos[estilo]+" "+tamanhos[tamanho]+" "+rotacoes[rotacao]+" "+inclinacoes[inclinacao];
+                })
             }
             document.getElementById("carta-contador").innerText = conteudosplit.length;
         } else {
