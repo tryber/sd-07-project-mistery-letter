@@ -13,14 +13,30 @@
 <script>
     let button = document.getElementById("criar-carta");
     let carta = document.getElementById("carta-gerada");
+    let aux = false;
     button.addEventListener("click", function() {
         let conteudo = document.getElementById("carta-texto").value;
         let conteudosplit = conteudo.split(' ');
+        console.log(conteudosplit);
+        console.log(conteudosplit.length);
         for ( i = 0 ; i < conteudosplit.length ; i++ ) {
-            let aux = document.createElement("span");
-            aux.innerText = conteudosplit[i];
-            carta.appendChild(aux);
+            console.log(aux)
+            if ( conteudosplit[i] != "") {
+                aux = true;
+                carta.innerText = "";
+                break;
+            }
         }
-    })
+        if ( aux ){ 
+            for ( i = 0 ; i < conteudosplit.length ; i++ ) {
+                let aux = document.createElement("span");
+                aux.innerText = conteudosplit[i];
+                carta.appendChild(aux);
+            }
+        } else {
+            carta.innerText = "Por favor, digite o conteúdo da carta.";
+        }
+
+    });
 </script>
 </html>
