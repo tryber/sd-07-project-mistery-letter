@@ -86,6 +86,7 @@
                 aux.className = estilos[estilo]+" "+tamanhos[tamanho]+" "+rotacoes[rotacao]+" "+inclinacoes[inclinacao];
                 carta.appendChild(aux);
             }
+            document.getElementById("carta-contador").innerText = conteudosplit.length;
         } else {
             carta.innerText = "Por favor, digite o conteúdo da carta.";
         }
