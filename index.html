@@ -39,6 +39,9 @@
             transform: rotate(5deg);
         }
         .skewleft {
+            transform: skewX(10deg);
+        }
+        .skewright {
             transform: skewX(-10deg);
         }
     </style>
@@ -52,11 +55,14 @@
     let button = document.getElementById("criar-carta");
     let carta = document.getElementById("carta-gerada");
     let aux = false;
+    let estilos = ['newspaper', 'magazine1', 'magazine2'];
+    let tamanhos = ['medium', 'big', 'reallybig'];
+    let rotacoes = ['rotateleft', 'rotateleft', ''];
+    let inclinacoes = ['skewleft', 'skewright', ''];
+
     button.addEventListener("click", function() {
         let conteudo = document.getElementById("carta-texto").value;
         let conteudosplit = conteudo.split(' ');
-        console.log(conteudosplit);
-        console.log(conteudosplit.length);
         for ( i = 0 ; i < conteudosplit.length ; i++ ) {
             console.log(aux)
             if ( conteudosplit[i] != "") {
@@ -68,13 +74,17 @@
         if ( aux ){ 
             for ( i = 0 ; i < conteudosplit.length ; i++ ) {
                 let aux = document.createElement("span");
+                let estilo = parseInt(Math.random()*3);
+                let tamanho = parseInt(Math.random()*3);
+                let rotacao = parseInt(Math.random()*3);
+                let inclinacao = parseInt(Math.random()*3);
                 aux.innerText = conteudosplit[i];
+                aux.className = estilos[estilo]+" "+tamanhos[tamanho]+" "+rotacoes[rotacao]+" "+inclinacoes[inclinacao];
                 carta.appendChild(aux);
             }
         } else {
             carta.innerText = "Por favor, digite o conteúdo da carta.";
         }
-
     });
 </script>
 </html>
