@@ -61,8 +61,8 @@
     let aux = false;
     let estilos = ['newspaper', 'magazine1', 'magazine2'];
     let tamanhos = ['medium', 'big', 'reallybig'];
-    let rotacoes = ['rotateleft', 'rotateleft', ''];
-    let inclinacoes = ['skewleft', 'skewright', ''];
+    let rotacoes = ['rotateleft', 'rotateleft'];
+    let inclinacoes = ['skewleft', 'skewright'];
 
     button.addEventListener("click", function() {
         let conteudo = document.getElementById("carta-texto").value;
@@ -80,8 +80,8 @@
                 let aux = document.createElement("span");
                 let estilo = parseInt(Math.random()*3);
                 let tamanho = parseInt(Math.random()*3);
-                let rotacao = parseInt(Math.random()*3);
-                let inclinacao = parseInt(Math.random()*3);
+                let rotacao = parseInt(Math.random()*2);
+                let inclinacao = parseInt(Math.random()*2);
                 aux.innerText = conteudosplit[i];
                 aux.className = estilos[estilo]+" "+tamanhos[tamanho]+" "+rotacoes[rotacao]+" "+inclinacoes[inclinacao];
                 carta.appendChild(aux);
