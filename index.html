@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="carta-texto" id="carta-texto">
+    <button id="criar-carta">Gerar carta</button>
+    <p id="carta-gerada"></p>
+</body>
+<script>
+    let button = document.getElementById("criar-carta");
+    let carta = document.getElementById("carta-gerada");
+    button.addEventListener("click", function() {
+        let conteudo = document.getElementById("carta-texto").value;
+        let conteudosplit = conteudo.split(' ');
+        for ( i = 0 ; i < conteudosplit.length ; i++ ) {
+            let aux = document.createElement("span");
+            aux.innerText = conteudosplit[i];
+            carta.appendChild(aux);
+        }
+    })
+</script>
+</html>
