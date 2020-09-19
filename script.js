@@ -25,6 +25,8 @@ function escolhaRandomica() {
 
 novaCarta.addEventListener('click', () => {
   const caixaTexto = textoInserido.value;
+  let carta = document.createElement('span');
+  carta.id = 'criar-carta';
 
   if (checarEspaco(caixaTexto).length !== 0) {
     const arrayTexto = caixaTexto.split(' ', caixaTexto.length);
@@ -36,8 +38,9 @@ novaCarta.addEventListener('click', () => {
 
     arrayTexto.forEach((textoSeparado) => {
       const classes = escolhaRandomica();
-      const carta = document.createElement('span');
+      carta = document.createElement('span');
       carta.id = 'criar-carta';
+
       classes.forEach((item) => {
         carta.classList.add(item);
       });
