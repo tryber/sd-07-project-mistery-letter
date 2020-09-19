@@ -10,9 +10,13 @@ let contagemFinal = 0;
 
 // Solução p/ espaçamento em branco encontrado no seguinte link: https://bit.ly/3iGxe4F
 function checarEspaco(texto) {
-  if (/^\s/.test(texto)) {
-    texto = '';
-  }
+  let checar = texto.split(' ');
+  checar.forEach((letra) => {
+    if (letra === '') {
+      return (texto = '');
+    }
+  });
+
   return texto;
 }
 
