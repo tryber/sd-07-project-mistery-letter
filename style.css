@@ -2,7 +2,6 @@ body {
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  margin: auto;
   padding: auto;
 }
 
@@ -12,6 +11,14 @@ button {
   cursor: pointer;
 }
 
+span {
+  display: inline-block;
+  margin: 5px;
+}
+
+.cartas {
+  margin-top: 50px;
+}
 .newspaper {
   background-color: antiquewhite;
   font-family: 'Times New Roman';
