@@ -2,16 +2,16 @@ body {
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  padding: auto;
+  padding: 0;
 }
 
 button {
   border-radius: 10px;
-  font-weight: 600;
   cursor: pointer;
+  font-weight: 600;
 }
 
-span {
+p {
   display: inline-block;
   margin: 5px;
 }
@@ -19,24 +19,25 @@ span {
 .cartas {
   margin-top: 50px;
 }
+
 .newspaper {
   background-color: antiquewhite;
-  font-family: 'Times New Roman';
+  font-family: "Times New Roman", sans-serif;
   font-weight: bold;
 }
 
 .magazine1 {
   background-color: teal;
   color: white;
-  font-family: Verdana;
+  font-family: Verdana, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
 }
 
 .magazine2 {
-  background-image: url(./images/pink-pattern.png);
+  background-image: url("./images/pink-pattern.png");
   color: fuchsia;
-  font-family: Verdana;
+  font-family: Verdana, sans-serif;
   font-weight: 900;
 }
 

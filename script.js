@@ -30,7 +30,12 @@ novaCarta.addEventListener('click', () => {
       const novaRotacao = rotacao[escolhaRandomica(rotacao.length)];
       const novaInclinacao = inclinacao[escolhaRandomica(inclinacao.length)];
       const classes = [novoTamanho, novoEstilo, novaRotacao, novaInclinacao];
-      const carta = document.createElement('span');
+      const carta = document.createElement('p');
+      const tirarAviso = document.querySelectorAll('.aviso');
+      tirarAviso.forEach((remover) => {
+        containerCarta.removeChild(remover);
+      });
+
       carta.id = 'criar-carta';
 
       classes.forEach((item) => {
@@ -43,6 +48,13 @@ novaCarta.addEventListener('click', () => {
       containerCarta.appendChild(carta);
     });
   } else {
-    alert('Por favor, digite o conteúdo da carta.');
+    const carta = document.createElement('p');
+    const texto = document.createTextNode(
+      'Por favor, digite o conteúdo da carta.'
+    );
+
+    carta.classList.add('aviso');
+    carta.appendChild(texto);
+    containerCarta.appendChild(carta);
   }
 });
