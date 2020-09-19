@@ -2,12 +2,12 @@ const textInput = document.getElementById('carta-texto');
 const generatedLetter = document.getElementById('carta-gerada');
 const creationButton = document.getElementById('criar-carta');
 const wordCont = document.getElementById('carta-contador');
-const styleGroupClasses = [`newspaper`, `magazine1`, `magazine2`];
-const sizeGroupClasses = [`medium`, `big`, `reallybig`];
-const rotationGroupClasses = [`rotateleft`, `rotateright`];
-const skewGroupClasses = [`skewleft`, `skewright`];
+const styleGroupClasses = ['newspaper', 'magazine1', 'magazine2'];
+const sizeGroupClasses = ['medium', 'big', 'reallybig'];
+const rotationGroupClasses = ['rotateleft', 'rotateright'];
+const skewGroupClasses = ['skewleft', 'skewright'];
 
-function addRandomClasses (createdSpan) {
+function addRandomClasses(createdSpan) {
   const randomStyle = Math.floor(Math.random() * styleGroupClasses.length);
   const randomSize = Math.floor(Math.random() * sizeGroupClasses.length);
   const randomRotation = Math.floor(Math.random() * rotationGroupClasses.length);
@@ -27,7 +27,7 @@ creationButton.addEventListener('click', function () {
   const letterArray = textInput.value.split(' ');
   wordCont.innerHTML = 0;
   if (textInput.value === '' || letterArray[0] === '') {
-    generatedLetter.innerHTML = 'Por favor, digite o conteúdo da carta.'
+    generatedLetter.innerHTML = 'Por favor, digite o conteúdo da carta.';
     textInput.value = '';
     return;
   }
