@@ -41,15 +41,16 @@ function gerarCartaMisteriosa() {
 
 document.getElementById('criar-carta').addEventListener('click', () => {
   if (document.querySelector('#carta-texto').value === '') {
-    return (document.querySelector('#carta-gerada').innerHTML =
-      'por favor, digite o conteúdo da carta.');
+    let erro = document.createElement('p');
+    erro.innerText = "Por favor, digite o conteúdo da carta."
+    return (document.getElementById('carta-gerada').appendChild(erro));
   }
+  if (document.getElementById('carta-gerada').firstElementChild !== null){
   if (
-    document.getElementById('carta-gerada').innerHTML ===
-    'por favor, digite o conteúdo da carta.'
+    document.getElementById('carta-gerada').firstChild.innerText === 'Por favor, digite o conteúdo da carta.' && document.getElementById('carta-texto').value !== ''
   ) {
-    return (document.getElementById('carta-gerada').innerText = '');
-  }
+    return (document.getElementById('carta-gerada').firstChild.remove());
+  }}
   gerarCartaMisteriosa();
   aplicarEstilo();
   aplicarEstiloNoClick();
