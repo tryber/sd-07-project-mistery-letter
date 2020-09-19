@@ -26,7 +26,14 @@ function createSpan(word) {
 }
 
 creationButton.addEventListener('click', function () {
-  const letterArray = splitSentence(textInput.value);
+
+  const letterArray = splitSentence(generatedLetter.innerHTML);
+  if(letterArray === '' || letterArray[0] === '') {
+    alert('Por favor, digite o conteúdo da carta.');
+    textInput.value = '';
+    return;
+  }
+  generatedLetter.innerHTML = '';
   for (let index = 0; index < letterArray.length; index += 1) {
     createSpan(letterArray[index]);
   }
