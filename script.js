@@ -6,18 +6,11 @@ const tamanho = ['medium', 'big', 'reallybig'];
 const estilo = ['newspaper', 'magazine1', 'magazine2'];
 const rotacao = ['rotateleft', 'rotateright'];
 const inclinacao = ['skewleft', 'skewright'];
-let contagemFinal = 0;
 
 // Solução p/ espaçamento em branco encontrado no seguinte link: https://bit.ly/3iGxe4F
 function checarEspaco(texto) {
-  let checar = texto.split(' ');
-  checar.forEach((letra) => {
-    if (letra === '') {
-      return (texto = '');
-    }
-  });
-
-  return texto;
+  const checar = texto.replace(/\s/g, '');
+  return checar;
 }
 
 function escolhaRandomica() {
@@ -30,12 +23,12 @@ function escolhaRandomica() {
 }
 
 novaCarta.addEventListener('click', () => {
-  const caixaTexto = textoInserido.value;
+  let caixaTexto = textoInserido.value;
 
   if (checarEspaco(caixaTexto).length !== 0) {
-    const arrayTexto = caixaTexto.split(' ', caixaTexto.length);
-    const contando = arrayTexto.length;
-    contagemFinal += contando;
+    caixaTexto = caixaTexto.replace(/\s\s+/g, ' ').trim();
+    console.log(caixaTexto);
+    const arrayTexto = caixaTexto.split(' ', caixaTexto.length - 1);
 
     if (containerCarta.classList.contains('aviso')) {
       containerCarta.classList.remove('aviso');
@@ -56,10 +49,9 @@ novaCarta.addEventListener('click', () => {
       carta.appendChild(texto);
       containerCarta.appendChild(carta);
       contador.innerText = '';
-      contador.innerText = contagemFinal;
+      contador.innerText = arrayTexto.length;
     });
   } else {
-    contagemFinal = 0;
     contador.innerText = '0';
     containerCarta.innerText = '';
     const aviso = 'Por favor, digite o conteúdo da carta.';
