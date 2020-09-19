@@ -23,6 +23,10 @@ novaCarta.addEventListener('click', () => {
 
   if (checarEspaco(caixaTexto).length !== 0) {
     const arrayTexto = caixaTexto.split(' ', caixaTexto.length);
+    if (containerCarta.classList.contains('aviso')) {
+      containerCarta.classList.remove('aviso');
+      containerCarta.innerText = '';
+    }
 
     arrayTexto.forEach((textoSeparado) => {
       const novoTamanho = tamanho[escolhaRandomica(tamanho.length)];
@@ -30,11 +34,7 @@ novaCarta.addEventListener('click', () => {
       const novaRotacao = rotacao[escolhaRandomica(rotacao.length)];
       const novaInclinacao = inclinacao[escolhaRandomica(inclinacao.length)];
       const classes = [novoTamanho, novoEstilo, novaRotacao, novaInclinacao];
-      const carta = document.createElement('p');
-      const tirarAviso = document.querySelectorAll('.aviso');
-      tirarAviso.forEach((remover) => {
-        containerCarta.removeChild(remover);
-      });
+      const carta = document.createElement('span');
 
       carta.id = 'criar-carta';
 
@@ -48,13 +48,11 @@ novaCarta.addEventListener('click', () => {
       containerCarta.appendChild(carta);
     });
   } else {
-    const carta = document.createElement('p');
-    const texto = document.createTextNode(
-      'Por favor, digite o conteúdo da carta.'
-    );
+    containerCarta.innerText = '';
+    const aviso = 'Por favor, digite o conteúdo da carta.';
+    const texto = document.createTextNode(aviso);
 
-    carta.classList.add('aviso');
-    carta.appendChild(texto);
-    containerCarta.appendChild(carta);
+    containerCarta.classList.add('aviso');
+    containerCarta.appendChild(texto);
   }
 });
