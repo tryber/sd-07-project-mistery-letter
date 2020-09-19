@@ -5,3 +5,9 @@ body {
   margin: auto;
   padding: auto;
 }
+
+button {
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
