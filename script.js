@@ -2,22 +2,6 @@ const textInput = document.getElementById('carta-texto');
 const generatedLetter = document.getElementById('carta-gerada');
 const creationButton = document.getElementById('criar-carta');
 
-function splitSentence(string) {
-  let arrayString = [];
-  let word = '';
-
-  for (let i = 0; i < string.length; i += 1) {
-    if (string[i] === ' ' && word !== '') {
-      arrayString.push(word);
-      word = '';
-    } else if (string[i] !== ' ') {
-      word += string[i];
-    }
-  }
-  arrayString.push(word);
-  return arrayString;
-}
-
 function createSpan(word) {
   const newSpan = document.createElement('span');
   newSpan.innerHTML = word;
@@ -26,9 +10,8 @@ function createSpan(word) {
 }
 
 creationButton.addEventListener('click', function () {
-
-  const letterArray = splitSentence(generatedLetter.innerHTML);
-  if(letterArray === '' || letterArray[0] === '') {
+  const letterArray = textInput.value.split(' ');
+  if (textInput.value === '' || letterArray[0] === '') {
     alert('Por favor, digite o conteúdo da carta.');
     textInput.value = '';
     return;
