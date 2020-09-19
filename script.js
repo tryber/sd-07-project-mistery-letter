@@ -22,7 +22,7 @@ function escolhaRandomica() {
 }
 
 novaCarta.addEventListener('click', () => {
-  let caixaTexto = textoInserido.value.replace(/\s\s+/g, ' ').trim();
+  const caixaTexto = textoInserido.value.replace(/\s\s+/g, ' ').trim();
   containerCarta.innerText = '';
 
   if (checarEspaco(caixaTexto).length !== 0) {
