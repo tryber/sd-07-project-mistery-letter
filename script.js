@@ -14,8 +14,13 @@ function checarEspaco(texto) {
   return texto;
 }
 
-function escolhaRandomica(valor) {
-  return Math.floor(Math.random() * valor);
+function escolhaRandomica() {
+  const novoTamanho = tamanho[Math.floor(Math.random() * tamanho.length)];
+  const novoEstilo = estilo[Math.floor(Math.random() * estilo.length)];
+  const novaRotacao = rotacao[Math.floor(Math.random() * rotacao.length)];
+  const novaInclinacao = inclinacao[Math.floor(Math.random() * inclinacao.length)];
+
+  return [novoTamanho, novoEstilo, novaRotacao, novaInclinacao];
 }
 
 novaCarta.addEventListener('click', () => {
@@ -23,28 +28,22 @@ novaCarta.addEventListener('click', () => {
 
   if (checarEspaco(caixaTexto).length !== 0) {
     const arrayTexto = caixaTexto.split(' ', caixaTexto.length);
+
     if (containerCarta.classList.contains('aviso')) {
       containerCarta.classList.remove('aviso');
       containerCarta.innerText = '';
     }
 
     arrayTexto.forEach((textoSeparado) => {
-      const novoTamanho = tamanho[escolhaRandomica(tamanho.length)];
-      const novoEstilo = estilo[escolhaRandomica(estilo.length)];
-      const novaRotacao = rotacao[escolhaRandomica(rotacao.length)];
-      const novaInclinacao = inclinacao[escolhaRandomica(inclinacao.length)];
-      const classes = [novoTamanho, novoEstilo, novaRotacao, novaInclinacao];
+      const classes = escolhaRandomica();
       const carta = document.createElement('span');
-
       carta.id = 'criar-carta';
-
       classes.forEach((item) => {
         carta.classList.add(item);
       });
 
       const texto = document.createTextNode(textoSeparado);
       carta.appendChild(texto);
-
       containerCarta.appendChild(carta);
     });
   } else {
