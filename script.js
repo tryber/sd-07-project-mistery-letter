@@ -16,6 +16,7 @@ function createLetter() {
   clearParagraph()
   if(inputText.value && inputText.value.trim() !== "") {
     let words = inputText.value.split(" ")
+    wordCounter(words)
     for (let item = 0; item < words.length; item += 1) {
       let newParagraphElement = document.createElement('span');
       newParagraphElement.innerText = words[item]
@@ -62,4 +63,9 @@ function addClickListener(newWord) {
     }
     newWord.classList.add(styleGroup[randomStyle - 1])
   })
+}
+
+function wordCounter(words) {
+  let counter = document.getElementById('carta-contador')
+  counter.innerText = words.length
 }
