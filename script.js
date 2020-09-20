@@ -1,8 +1,8 @@
 let textoDaCarta;
 let arrayCarta = [];
-// https://stackoverflow.com/a/50135988 fonte .replace()
+
 document.getElementById('carta-texto').addEventListener('keydown', () => {
-  textoDaCarta = document.getElementById('carta-texto').value.replace(/(^|<\/?[^>]+>|\s+)([^\s<]+)/g, '$1<span>$2</span>');
+  textoDaCarta = document.getElementById('carta-texto').value;
 });
 
 function numeroAleatorio(n) {
@@ -32,10 +32,13 @@ function aplicarEstiloNoClick(){
 }
 
 function gerarCartaMisteriosa() {
+  arrayCarta = textoDaCarta.split(' ');
+  for(let index = 0; index < arrayCarta.length; index += 1){
+    const texto = document.createElement('span');
+    texto.innerText = arrayCarta[index];
+    document.getElementById('carta-gerada').appendChild(texto);
+  }
   const linha = document.createElement('br');
-  const carta = document.createElement('span');
-  carta.innerHTML = textoDaCarta;
-  document.getElementById('carta-gerada').appendChild(carta);
   document.getElementById('carta-gerada').appendChild(linha);
 }
 
