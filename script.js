@@ -38,8 +38,8 @@ function gerarCartaMisteriosa() {
     document.getElementById('carta-gerada').appendChild(texto);
     document.getElementById('carta-contador').innerText = index+1;
   }
-  const linha = document.createElement('br');
-  document.getElementById('carta-gerada').appendChild(linha);
+  //const linha = document.createElement('br');
+  //document.getElementById('carta-gerada').appendChild(linha);
 }
 
 String.prototype.trim = function () {
