@@ -32,20 +32,14 @@ function aplicarEstiloNoClick() {
 
 function gerarCartaMisteriosa() {
   arrayCarta = textoDaCarta.split(' ');
-  const testeArray = arrayCarta.join().replace(/,/g, '');
-  if (testeArray === document.getElementById('carta-gerada').innerText) {
-  }
   for (let index = 0; index < arrayCarta.length; index += 1) {
     const texto = document.createElement('span');
     texto.innerText = arrayCarta[index];
     document.getElementById('carta-gerada').appendChild(texto);
     document.getElementById('carta-contador').innerText = index + 1;
   }
+  arrayCarta = [];
 }
-
-String.prototype.trim = function () {
-  return this.replace(/^\s*/, '').replace(/\s*$/, '');
-};
 
 document.getElementById('criar-carta').addEventListener('click', () => {
   const textoCarta = document.getElementById('carta-texto').value;
@@ -63,7 +57,8 @@ document.getElementById('criar-carta').addEventListener('click', () => {
       return document.getElementById('carta-gerada').firstChild.remove();
     }
   }
+  document.getElementById('carta-gerada').innerHTML = ''
   gerarCartaMisteriosa();
   aplicarEstilo();
-  aplicarEstiloNoClick();
+  return aplicarEstiloNoClick();
 });
