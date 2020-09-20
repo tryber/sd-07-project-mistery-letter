@@ -12,43 +12,18 @@ document.querySelector('#criar-carta').addEventListener('click', function () {
       puttingStyle(showWord);
     }
   }
-  let spanLength = document.querySelectorAll('span').length;
-  document.querySelector('#carta-contador').innerText = spanLength;
+  document.querySelector('#carta-contador').innerText = document.querySelectorAll('span').length;
 });
 
 function puttingStyle(spanHere) {
   // Math.random() * (max - min) + min; igual ou maior a min e menor que max;
-  let stylingSpan = Math.floor(Math.random() * 6);
-  spanHere.className = '';
-  if (stylingSpan === 0) {
-    spanHere.className = '';
-    spanHere.classList.add('newspaper');
-    spanHere.classList.add('medium');
-    spanHere.classList.add('rotateleft');
-  } else if (stylingSpan === 1) {
-    spanHere.className = '';
-    spanHere.classList.add('magazine1');
-    spanHere.classList.add('big');
-    spanHere.classList.add('shewleft');
-  } else if (stylingSpan === 2) {
-    spanHere.className = '';
-    spanHere.classList.add('magazine2');
-    spanHere.classList.add('reallybig');
-    spanHere.classList.add('rotateright');
-  } else if (stylingSpan === 3) {
-    spanHere.className = '';
-    spanHere.classList.add('newspaper');
-    spanHere.classList.add('big');
-    spanHere.classList.add('shewright');
-  } else if (stylingSpan === 4) {
-    spanHere.className = '';
-    spanHere.classList.add('magazine1');
-    spanHere.classList.add('reallybig');
-    spanHere.classList.add('rotateleft');
-  } else {
-    spanHere.className = '';
-    spanHere.classList.add('magazine2');
-    spanHere.classList.add('medium');
-    spanHere.classList.add('shewleft');
-  }
+  const styleClass = ['newspaper', 'magazine1', 'magazine2'];
+  const sizeClass = ['medium', 'big', 'reallybig'];
+  const rotateClass = ['rotateleft', 'rotateright'];
+  const skewClass = ['skewleft', 'skewright'];
+  const from0to3 = Math.floor(Math.random() * 3); // para gerar o índice aleatório;
+  const from0to2 = Math.floor(Math.random() * 2);
+  const style = styleClass[from0to3]; // para a linha 29 fica com menos de 100 (Code Climate);
+  const rotate = rotateClass[from0to2];
+  spanHere.className = `${style} ${sizeClass[from0to3]} ${rotate} ${skewClass[from0to2]}`;
 }
