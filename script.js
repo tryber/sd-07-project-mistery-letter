@@ -57,7 +57,7 @@ document.getElementById('criar-carta').addEventListener('click', () => {
       return document.getElementById('carta-gerada').firstChild.remove();
     }
   }
-  document.getElementById('carta-gerada').innerHTML = ''
+  document.getElementById('carta-gerada').innerHTML = '';
   gerarCartaMisteriosa();
   aplicarEstilo();
   return aplicarEstiloNoClick();
