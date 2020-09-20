@@ -1,13 +1,17 @@
 var inputText = document.getElementById('carta-texto');
-var text = '';
+var text;
 var words = [];
 var generateLetter = document.getElementById('carta-gerada');
 var btn = document.getElementById('criar-carta');
 
 btn.addEventListener('click', function () {
   text = inputText.value;
-  span(text);
-  });
+  if (text === '' || text === ' ') {
+    generateLetter.innerText = 'Por favor, digite o conteúdo da carta.';
+  } else {
+    span(text);
+  }
+});
 
 function span(text) {
   const arrayWords = text.split(' ');
