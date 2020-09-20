@@ -51,7 +51,7 @@ String.prototype.trim = function () {
 }
 
 document.getElementById('criar-carta').addEventListener('click', () => {
-  let textoCarta = document.querySelector('#carta-texto').value;
+  let textoCarta = document.getElementById('carta-texto').value;
   if (textoCarta === '' || textoCarta.trim().length === 0) {
     let erro = document.createElement('p');
     erro.innerText = "Por favor, digite o conteúdo da carta."

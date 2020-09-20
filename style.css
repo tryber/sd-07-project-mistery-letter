@@ -50,7 +50,7 @@
   transform: skewX(-10deg);
 }
 
-.linha {
-  display: block;
-  margin-top: 35px;
+span {
+  display: inline-block;
+  margin-left: 10px;
 }
