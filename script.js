@@ -22,48 +22,47 @@ function aplicarEstilo() {
   });
 }
 
-function aplicarEstiloNoClick(){
+function aplicarEstiloNoClick() {
   document.querySelectorAll('span').forEach((item) => {
     item.addEventListener('click', () => {
       aplicarEstilo();
-    })
-  })
+    });
+  });
 }
 
 function gerarCartaMisteriosa() {
   arrayCarta = textoDaCarta.split(' ');
-  let testeArray = arrayCarta.join().replace(/,/g,'');
-  if(testeArray === document.getElementById('carta-gerada').innerText){
-    return console.log('foi');
+  const testeArray = arrayCarta.join().replace(/,/g, '');
+  if (testeArray === document.getElementById('carta-gerada').innerText) {
   }
-  for(let index = 0; index < arrayCarta.length; index += 1){
+  for (let index = 0; index < arrayCarta.length; index += 1) {
     const texto = document.createElement('span');
     texto.innerText = arrayCarta[index];
     document.getElementById('carta-gerada').appendChild(texto);
-    document.getElementById('carta-contador').innerText = index+1;
+    document.getElementById('carta-contador').innerText = index + 1;
   }
-  //const linha = document.createElement('br');
-  //document.getElementById('carta-gerada').appendChild(linha);
 }
 
 String.prototype.trim = function () {
-  return this.replace(/^\s*/, "").replace(/\s*$/, "");
-}
+  return this.replace(/^\s*/, '').replace(/\s*$/, '');
+};
 
 document.getElementById('criar-carta').addEventListener('click', () => {
-  let textoCarta = document.getElementById('carta-texto').value;
+  const textoCarta = document.getElementById('carta-texto').value;
   if (textoCarta === '' || textoCarta.trim().length === 0) {
-    let erro = document.createElement('p');
-    erro.innerText = "Por favor, digite o conteúdo da carta."
-    return (document.getElementById('carta-gerada').appendChild(erro));
+    const erro = document.createElement('p');
+    erro.innerText = 'Por favor, digite o conteúdo da carta.';
+    return document.getElementById('carta-gerada').appendChild(erro);
   }
-  if (document.getElementById('carta-gerada').firstElementChild !== null){
-  if (
-    document.getElementById('carta-gerada').firstChild.innerText === 'Por favor, digite o conteúdo da carta.' && document.getElementById('carta-texto').value !== ''
-  ) {
-    return (document.getElementById('carta-gerada').firstChild.remove());
-  }}
-  let teste = document.querySelectorAll('span').length;
+  if (document.getElementById('carta-gerada').firstElementChild !== null) {
+    if (
+      document.getElementById('carta-gerada').firstChild.innerText ===
+        'Por favor, digite o conteúdo da carta.' &&
+      document.getElementById('carta-texto').value !== ''
+    ) {
+      return document.getElementById('carta-gerada').firstChild.remove();
+    }
+  }
   gerarCartaMisteriosa();
   aplicarEstilo();
   aplicarEstiloNoClick();
