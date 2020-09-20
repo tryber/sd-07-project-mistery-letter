@@ -1,5 +1,5 @@
 let textoDaCarta;
-
+let arrayCarta = [];
 document.getElementById('carta-texto').addEventListener('change', () => {
   textoDaCarta = document.getElementById('carta-texto').value;
 });
@@ -31,7 +31,11 @@ function aplicarEstiloNoClick(){
 }
 
 function gerarCartaMisteriosa() {
-  let arrayCarta = textoDaCarta.split(' ');
+  arrayCarta = textoDaCarta.split(' ');
+  let testeArray = arrayCarta.join().replace(/,/g,'');
+  if(testeArray === document.getElementById('carta-gerada').innerText){
+    return console.log('foi');
+  }
   for(let index = 0; index < arrayCarta.length; index += 1){
     const texto = document.createElement('span');
     texto.innerText = arrayCarta[index];
