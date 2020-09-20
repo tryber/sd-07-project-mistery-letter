@@ -1,7 +1,6 @@
 let textoDaCarta;
-let arrayCarta = [];
 
-document.getElementById('carta-texto').addEventListener('keydown', () => {
+document.getElementById('carta-texto').addEventListener('change', () => {
   textoDaCarta = document.getElementById('carta-texto').value;
 });
 
@@ -32,7 +31,7 @@ function aplicarEstiloNoClick(){
 }
 
 function gerarCartaMisteriosa() {
-  arrayCarta = textoDaCarta.split(' ');
+  const arrayCarta = textoDaCarta.split(' ');
   for(let index = 0; index < arrayCarta.length; index += 1){
     const texto = document.createElement('span');
     texto.innerText = arrayCarta[index];
