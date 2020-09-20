@@ -4,6 +4,7 @@ document.querySelector('#criar-carta').addEventListener('click', function () {
   if (frase === '' || frase === ' ') {
     document.querySelector('#carta-gerada').innerText = 'Por favor, digite o conteúdo da carta.';
   } else {
+    document.querySelector('#carta-gerada').innerText = '';
     for (let i = 0; i < word.length; i += 1) {
       const showWord = document.createElement('span');
       document.querySelector('#carta-gerada').appendChild(showWord);
@@ -11,7 +12,8 @@ document.querySelector('#criar-carta').addEventListener('click', function () {
       puttingStyle(showWord);
     }
   }
-  document.querySelector('#carta-contador').innerText = `Essa carta tem ${word.length} palavras`;
+  let spanLength = document.querySelectorAll('span').length;
+  document.querySelector('#carta-contador').innerText = `Essa carta têm ${spanLength} palavras`;
 });
 
 function puttingStyle(spanHere) {
