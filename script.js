@@ -13,12 +13,12 @@ document.querySelector('#criar-carta').addEventListener('click', function () {
     }
   }
   let spanLength = document.querySelectorAll('span').length;
-  document.querySelector('#carta-contador').innerText = `Essa carta têm ${spanLength} palavras`;
+  document.querySelector('#carta-contador').innerText = spanLength;
 });
 
 function puttingStyle(spanHere) {
   // Math.random() * (max - min) + min; igual ou maior a min e menor que max;
-  let stylingSpan = Math.floor(Math.random () * 6)
+  let stylingSpan = Math.floor(Math.random() * 6);
   spanHere.className = '';
   if (stylingSpan === 0) {
     spanHere.className = '';
