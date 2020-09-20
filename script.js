@@ -31,11 +31,12 @@ function aplicarEstiloNoClick(){
 }
 
 function gerarCartaMisteriosa() {
-  const arrayCarta = textoDaCarta.split(' ');
+  let arrayCarta = textoDaCarta.split(' ');
   for(let index = 0; index < arrayCarta.length; index += 1){
     const texto = document.createElement('span');
     texto.innerText = arrayCarta[index];
     document.getElementById('carta-gerada').appendChild(texto);
+    document.getElementById('carta-contador').innerText = index+1;
   }
   const linha = document.createElement('br');
   document.getElementById('carta-gerada').appendChild(linha);
@@ -58,6 +59,7 @@ document.getElementById('criar-carta').addEventListener('click', () => {
   ) {
     return (document.getElementById('carta-gerada').firstChild.remove());
   }}
+  let teste = document.querySelectorAll('span').length;
   gerarCartaMisteriosa();
   aplicarEstilo();
   aplicarEstiloNoClick();
