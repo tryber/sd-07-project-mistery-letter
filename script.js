@@ -39,8 +39,13 @@ function gerarCartaMisteriosa() {
   document.getElementById('carta-gerada').appendChild(linha);
 }
 
+String.prototype.trim = function () {
+  return this.replace(/^\s*/, "").replace(/\s*$/, "");
+}
+
 document.getElementById('criar-carta').addEventListener('click', () => {
-  if (document.querySelector('#carta-texto').value === '') {
+  let textoCarta = document.querySelector('#carta-texto').value;
+  if (textoCarta === '' || textoCarta.trim().length === 0) {
     let erro = document.createElement('p');
     erro.innerText = "Por favor, digite o conteúdo da carta."
     return (document.getElementById('carta-gerada').appendChild(erro));
