@@ -43,17 +43,10 @@ function gerarCartaMisteriosa() {
 
 document.getElementById('criar-carta').addEventListener('click', () => {
   const textoCarta = document.getElementById('carta-texto').value;
-  document.getElementById('criar-carta').addEventListener('click', () => {
-    const textoCarta = document.getElementById('carta-texto').value;
-    if (textoCarta === '' || textoCarta.trim().length === 0) {
-      return (document.getElementById('carta-gerada').innerText =
-        'Por favor, digite o conteúdo da carta.');
-    }
-    document.getElementById('carta-gerada').innerHTML = '';
-    gerarCartaMisteriosa();
-    aplicarEstilo();
-    return aplicarEstiloNoClick();
-  });
+  if (textoCarta === '' || textoCarta.trim().length === 0) {
+    return (document.getElementById('carta-gerada').innerText =
+      'Por favor, digite o conteúdo da carta.');
+  }
   document.getElementById('carta-gerada').innerHTML = '';
   gerarCartaMisteriosa();
   aplicarEstilo();
