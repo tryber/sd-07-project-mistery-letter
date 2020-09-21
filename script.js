@@ -7,12 +7,6 @@ const tam = ['medium', 'big', 'reallybig'];
 const rot = ['rotateleft', 'rotateright'];
 const inc = ['skewleft', 'skewright'];
 
-function validaTexto(texto) {
-    if (texto.value === '' || !texto.value.trim()) {
-        alert('Por favor, digite o conteúdo da carta.');
-    }
-}
-
 function geraClasses() {      
    const estilos = est[Math.round(Math.random() * (est.length - 1))];
    const tamanhos = tam[Math.round(Math.random() * (tam.length - 1))];
@@ -25,8 +19,11 @@ function geraClasses() {
 console.log(geraClasses());
 
 criarCarta.addEventListener('click', () => {
-    validaTexto(cartaTexto);
-    let textoCarta = cartaTexto.value.split(' ');
+    if (cartaTexto.value === '' || !cartaTexto.value.trim()) {
+        alert('Por favor, digite o conteúdo da carta.');
+    } else {
+        let textoCarta = cartaTexto.value.trim().split(' ');
+        console.log(textoCarta);
     for (let index = 0; index < textoCarta.length; index += 1) {
         let spans = document.createElement('span');
         spans.style.display = 'inline-block';
@@ -34,7 +31,11 @@ criarCarta.addEventListener('click', () => {
         spans.classList.add(geraClasses());
         spans.classList.add(geraClasses());
         spans.classList.add(geraClasses());
-        spans.innerText = textoCarta[index];
-        cartaGerada.appendChild(spans);        
+        if (textoCarta[index].trim()) {
+            spans.innerText = textoCarta[index];
+            cartaGerada.appendChild(spans);  
+        }       
     }
+    }
+    
 });
