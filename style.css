@@ -9,14 +9,14 @@ font-weight: bold;
 
   background-color: teal;
   color: white;
-  font-family: verdana;
+  font-family: Verdana;
   font-weight: 900;
   text-transform: uppercase;
 }
 
 .magazine2{
 
-  background-image: 'images/pink-pattern.png';
+  background-image:images/pink-pattern.png;
   color: fuchsia;
   font-family: Verdana;
   font-weight: 900;
@@ -45,7 +45,10 @@ font-weight: bold;
   transform: rotate(-5deg);
 
 }
+.rotateright{
 
+  transform: rotate(5deg);
+}
 .skewleft{
 
 
