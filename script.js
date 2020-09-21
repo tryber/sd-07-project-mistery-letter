@@ -6,7 +6,7 @@ window.onload = function () {
     let letterSection = document.querySelector("#letterBody");
     
     createLetterButton.addEventListener("click", getLetterDone);
-
+   
     function getLetterDone() {
         createdLetter.innerHTML = "";
         let inputText = textOfLetter.value;
@@ -19,6 +19,7 @@ window.onload = function () {
                     let generateSpanTag = document.createElement("span");                                                                         
                     generateSpanTag.innerHTML = arrayWord;
                     createdLetter.appendChild(generateSpanTag);
+                    createdLetter.addEventListener("click", changeSpan);
                 }
             }
         } else {
@@ -33,17 +34,32 @@ window.onload = function () {
         let numberOfSpan = spanTags.length;
         if (letterBody.contains(counterExistence) == true) {
             letterSection.removeChild(counterExistence);
-            console.log(numberOfSpan);
             let createCounter = document.createElement("p");
             createCounter.id = "carta-contador";
             createCounter.innerText = numberOfSpan;
             letterSection.appendChild(createCounter);
         } else {
-            console.log(numberOfSpan);
             let createCounter = document.createElement("p");
             createCounter.id = "carta-contador";
             createCounter.innerText = numberOfSpan;
             letterSection.appendChild(createCounter);
         }
+        getRandomClasses();
+    }
+
+    function getRandomClasses() {
+        let spanTags = document.querySelectorAll("span");
+        let arrayClasses = [ "newspaper", "magazine1", "magazine2", "medium", "big", "reallybig", "rotateleft", "rotateright", "skewleft", "skewright" ];
+        for (index = 0; index < spanTags.length; index += 1) {
+            let newClass = Math.floor(Math.random()* 9);
+            spanTags[index].className = arrayClasses[newClass];
+        }
+    }
+
+    function changeSpan() {
+        let tagToChange = event.target;
+        let arrayClasses = [ "newspaper", "magazine1", "magazine2", "medium", "big", "reallybig", "rotateleft", "rotateright", "skewleft", "skewright" ];
+        let selectClass = Math.floor(Math.random()* 9);
+        tagToChange.className = arrayClasses[selectClass];
     }
 }
