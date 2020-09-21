@@ -10,7 +10,8 @@ window.onload = function () {
     function getLetterDone() {
         createdLetter.innerHTML = "";
         let inputText = textOfLetter.value;
-        if (inputText !== "") {
+        let emptySpaces = inputText.trim();
+        if (emptySpaces.length > 0) {
             let eachWord = inputText.split(" ");
             for (index = 0; index < eachWord.length; index += 1) {
                 let arrayWord = eachWord[index];
@@ -21,7 +22,7 @@ window.onload = function () {
                 }
             }
         } else {
-            alert("Por favor, digite o conteúdo da carta.");
+            createdLetter.innerText = "por favor, digite o conteúdo da carta.";
         }
         countingWords();
     }
@@ -44,11 +45,5 @@ window.onload = function () {
             createCounter.innerText = numberOfSpan;
             letterSection.appendChild(createCounter);
         }
-
     }
-
-    /* Cada palavra deve aparecer dentro de uma tag `span`.
-* As tags `span` devem ser adicionadas como filha do parágrafo que possui o id `carta-gerada`
-} */
-
 }
