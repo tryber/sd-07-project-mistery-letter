@@ -4,4 +4,5 @@ let textoInserido = document.getElementById("carta-gerada");
 
 botaoCriar.addEventListener("click", function() {
     textoInserido.innerHTML = textoAInserir.value;
+    textoInserido.classList.add("magazine1");
 });
