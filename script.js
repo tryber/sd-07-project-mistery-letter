@@ -4,6 +4,7 @@ let textoInserido = document.getElementById("carta-gerada");
 
 botaoCriar.addEventListener("click", function() {
     textoInserido.innerHTML = textoAInserir.value.split(" ");
-    for (i = 0; i < textoInserido.innerHTML.length; i++);
-    textoInserido[i].classList.add("magazine1");
+    textoInserido.classList.add("magazine1");
 });
+
+//for (i = 0; i < textoInserido.innerHTML.length; i++);
