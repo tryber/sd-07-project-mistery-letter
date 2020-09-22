@@ -1,22 +1,37 @@
-function createTagSpan(size) {
-  console.log(size);
+const cartaGerada = document.getElementById('carta-gerada');
+
+const arrayClass = ['newspaper', 'magazine1', 'magazine2', 'medium', 'big', 'reallybig', 'rotateleft', 'rotateright', 'skewleft', 'skewright'];
+
+function positionClassRandom() {
+  const positionClasseName = Math.floor(Math.random() * arrayClass.length);
+  return positionClasseName;
 }
 
-function generatingArrayOfWords(phrase) {
+function createTagSpan(arrayWords) {
+  for(let index = 0; index < arrayWords.length; index += 1) {
+    const tagSpan = document.createElement('span');
+    const positionClasseName = positionClassRandom();
+    tagSpan.classList.add(arrayClass[positionClasseName]);
+    tagSpan.innerText = arrayWords[index];
+    cartaGerada.appendChild(tagSpan);
+  }
+}
+
+function generateArrayOfWords(phrase) {
   const arrayWords = phrase.split(" ");
   return arrayWords;
 }
 
-function generationLetter(boolean, phrase) {
+function generateLetter(boolean, phrase) {
   if(boolean){
-    const arrayWords = generatingArrayOfWords(phrase);
-    createTagSpan(arrayWords.length);
+    const arrayWords = generateArrayOfWords(phrase);
+    createTagSpan(arrayWords);
   }
 }
 
 function checksInputEmpty(inputText) {
   if (inputText.value === "") {
-    document.getElementById('carta-gerada').innerText = 'Por favor, digite o conteúdo da carta';
+    cartaGerada.innerText = 'Por favor, digite o conteúdo da carta';
     return false;
   }
   return true;
@@ -25,5 +40,5 @@ function checksInputEmpty(inputText) {
 document.getElementById('criar-carta').addEventListener('click', function () {
   const inputText = document.querySelector('#carta-texto')
   const resultBoolean = checksInputEmpty(inputText);
-  generationLetter(resultBoolean, inputText.value);
+  generateLetter(resultBoolean, inputText.value);
 });
