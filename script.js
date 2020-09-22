@@ -52,7 +52,7 @@ function generateLetter(boolean, phrase) {
 
 function checksInputEmpty(input) {
   if (input.value === '') {
-    cartaGerada.innerText = 'Por favor, digite o conteúdo da carta';
+    cartaGerada.innerText = 'por favor, digite o conteúdo da carta';
     return false;
   }
   return true;
