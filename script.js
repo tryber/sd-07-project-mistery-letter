@@ -45,14 +45,16 @@ function generateArrayOfWords(phrase) {
 
 function generateLetter(boolean, phrase) {
   if (boolean) {
+    cartaGerada.innerText = '';
     const arrayWords = generateArrayOfWords(phrase);
     createTagSpan(arrayWords);
   }
 }
 
 function checksInputEmpty(input) {
-  if (input.value === '') {
-    cartaGerada.innerText = 'por favor, digite o conteúdo da carta';
+  input.value = input.value.trim();
+  if (input.value === '' || input.value.length === undefined) {
+    cartaGerada.innerText = 'Por favor, digite o conteúdo da carta';
     return false;
   }
   return true;
