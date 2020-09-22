@@ -14,19 +14,26 @@ function randomIndex(position) {
   return (Math.floor(Math.random() * (classGroup[position].length)));
 }
 
-function giveAClass() {
+function giveAClassPartTwo(index, classes, paragraphArray) {
+  classes = '';
+  let keys = Object.keys(classGroup)
+  
+  keys.forEach(function (key) {
+    if (key === 'skewGroup') {
+      classes += `${(classGroup[key])[randomIndex(key)]}`;
+    } else {
+      classes += `${(classGroup[key])[randomIndex(key)]} `;
+    }
+  });
+  paragraphArray[index].className = classes;
+}
+
+function giveAClassPartOne() {
   let classes = '';
   const paragraphArray = paragraph.children;
+  
   for (let index = 0; index < paragraphArray.length; index += 1) {
-    classes = '';
-    for (const key in classGroup) {
-      if (key === 'skewGroup') {
-        classes += `${(classGroup[key])[randomIndex(key)]}`;
-      } else {
-        classes += `${(classGroup[key])[randomIndex(key)]} `;
-      }
-    }
-    paragraphArray[index].className = classes;
+    giveAClassPartTwo(index, classes, paragraphArray);  
   }
 }
 
@@ -36,7 +43,7 @@ function createSpanForMisteryLetter(textArray) {
     newSpan.innerText = textArray[index];
     paragraph.appendChild(newSpan);
   }
-  giveAClass(paragraph);
+  giveAClassPartOne(paragraph);
 }
 
 function countWord(textArray) {

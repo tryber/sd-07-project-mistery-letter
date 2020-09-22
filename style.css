@@ -35,7 +35,6 @@ section {
 input {
   flex: 3 3 auto;
   font-family: 'Baloo Tammudu 2', sans-serif;
-  font-size: 17pt;
 }
 
 
@@ -76,7 +75,7 @@ p {
 
 .newspaper {
   background-color: antiquewhite;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Times, serif;
   font-weight: 700;
 }
 
@@ -138,6 +137,7 @@ footer {
   display: flex;
   flex-direction: column;
   font-family: 'Baloo Tammudu 2', sans-serif;
+  text-align: center;
 }
 
 address {
