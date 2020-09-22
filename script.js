@@ -6,6 +6,9 @@ const classGroup = {
 };
 
 const button = document.querySelector('#criar-carta');
+const paragraph = document.querySelector('#carta-gerada');
+const count = document.querySelector('#carta-contador');
+
 
 function randomIndex(position) {
   return (Math.floor(Math.random() * (classGroup[position].length)));
@@ -24,8 +27,6 @@ function giveAClass(paragraph) {
 }
 
 function createSpanForMisteryLetter(textArray) {
-  const paragraph = document.querySelector('#carta-gerada');
-  paragraph.innerText = '';
   for (let index = 0; index < textArray.length; index += 1) {
     const newSpan = document.createElement('span');
     newSpan.innerText = textArray[index];
@@ -35,7 +36,6 @@ function createSpanForMisteryLetter(textArray) {
 }
 
 function countWord(textArray) {
-  const count = document.querySelector('#carta-contador');
   let numbersOfWords = 0;
   for (let index = 0; index < textArray.length; index += 1) {
     numbersOfWords += 1;
@@ -55,6 +55,8 @@ function testInput(textArray) {
 
 button.addEventListener('click', function () {
   const input = document.querySelector('#carta-texto');
+  paragraph.innerText = '';
+  paragraph.classList.remove('erro');
   let inputValue = input.value;
   let pieceOfText =  inputValue.split(' ');
   let continueOrPause = testInput(pieceOfText); 
@@ -62,6 +64,8 @@ button.addEventListener('click', function () {
     createSpanForMisteryLetter(pieceOfText);
     countWord(pieceOfText);
   } else {
-    alert('ERRO! Verifique se o campo de texto está preenchido');
+    count.innerText = '';
+    paragraph.innerText = 'Por favor, digite o conteúdo da carta.'
+    paragraph.classList.add('erro');
   }
 });

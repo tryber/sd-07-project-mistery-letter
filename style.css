@@ -32,7 +32,7 @@ section {
 }
 
 input {
-  flex: 3 1 auto;
+  flex: 3 3 auto;
   font-family: 'Baloo Tammudu 2', sans-serif;
   font-size: 17pt;
 }
@@ -65,6 +65,12 @@ button:hover {
 p {
   margin-bottom: 20px;
   text-align: center;
+}
+
+.erro {
+  background-color: rgb(249 , 0 , 81);
+  color: white;
+  font-family: 'Baloo Tammudu 2', sans-serif;
 }
 
 .newspaper {
