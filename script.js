@@ -1,17 +1,25 @@
 const cartaGerada = document.getElementById('carta-gerada');
+const styleGroup = ['newspaper', 'magazine1', 'magazine2'];
+const sizeGroup = ['medium', 'big', 'reallybig'];
+const  rotationGroup = ['rotateleft', 'rotateright'];
+const tiltGroup = ['skewleft', 'skewright'];
 
-const arrayClass = ['newspaper', 'magazine1', 'magazine2', 'medium', 'big', 'reallybig', 'rotateleft', 'rotateright', 'skewleft', 'skewright'];
-
-function positionClassRandom() {
-  const positionClasseName = Math.floor(Math.random() * arrayClass.length);
+function positionClassRandom(array) {
+  const positionClasseName = Math.floor(Math.random() * array.length);
   return positionClasseName;
+}
+
+function addClass(tag) {
+  tag.classList.add(styleGroup[positionClassRandom(styleGroup)]);
+  tag.classList.add(sizeGroup[positionClassRandom(sizeGroup)]);
+  tag.classList.add(rotationGroup[positionClassRandom(rotationGroup)]);
+  tag.classList.add(tiltGroup[positionClassRandom(tiltGroup)]);
 }
 
 function createTagSpan(arrayWords) {
   for(let index = 0; index < arrayWords.length; index += 1) {
     const tagSpan = document.createElement('span');
-    const positionClasseName = positionClassRandom();
-    tagSpan.classList.add(arrayClass[positionClasseName]);
+    addClass(tagSpan);
     tagSpan.innerText = arrayWords[index];
     cartaGerada.appendChild(tagSpan);
   }
