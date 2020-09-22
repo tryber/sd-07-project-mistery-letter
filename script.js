@@ -18,7 +18,7 @@ function addClass(tag) {
 }
 
 function removeClassTag(tag) {
-  arrayClassName = [];
+  let arrayClassName = [];
   tag.classList.forEach((item) => {
     arrayClassName.push(item);
   });
@@ -28,7 +28,7 @@ function removeClassTag(tag) {
 }
 
 function createTagSpan(arrayWords) {
-  for(let index = 0; index < arrayWords.length; index += 1) {
+  for (let index = 0; index < arrayWords.length; index += 1) {
     const tagSpan = document.createElement('span');
     addClass(tagSpan);
     tagSpan.innerText = arrayWords[index];
@@ -38,20 +38,20 @@ function createTagSpan(arrayWords) {
 
 function generateArrayOfWords(phrase) {
   let arrayWords = [];
-  if (phrase.length === 0 ) return arrayWords;
+  if (phrase.length === 0) return arrayWords;
   arrayWords = phrase.split(' ');
   return arrayWords;
 }
 
 function generateLetter(boolean, phrase) {
-  if(boolean){
+  if (boolean) {
     const arrayWords = generateArrayOfWords(phrase);
     createTagSpan(arrayWords);
   }
 }
 
-function checksInputEmpty(inputText) {
-  if (inputText.value === "") {
+function checksInputEmpty(input) {
+  if (input.value === '') {
     cartaGerada.innerText = 'Por favor, digite o conteúdo da carta';
     return false;
   }
@@ -59,18 +59,18 @@ function checksInputEmpty(inputText) {
 }
 
 function countWords() {
-  const arrayWords =  generateArrayOfWords(inputText.value);
+  const arrayWords = generateArrayOfWords(inputText.value);
   return arrayWords.length;
 }
 
 document.getElementById('criar-carta').addEventListener('click', function () {
   const resultBoolean = checksInputEmpty(inputText);
   generateLetter(resultBoolean, inputText.value);
-  document.getElementById('carta-contador').innerText =  `Contém ${countWords()} palavras`;
+  document.getElementById('carta-contador').innerText = `${countWords()}`;
 });
 
 cartaGerada.addEventListener('click', function (event) {
-  tag = event.target;
+  const tag = event.target;
   removeClassTag(tag);
   addClass(tag);
 });
