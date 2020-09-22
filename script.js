@@ -54,7 +54,7 @@ function testInput(textArray) {
 }
 
 button.addEventListener('click', function () {
-  const input = document.querySelector('#carta-text');
+  const input = document.querySelector('#carta-texto');
   let inputValue = input.value;
   let pieceOfText =  inputValue.split(' ');
   let continueOrPause = testInput(pieceOfText); 
