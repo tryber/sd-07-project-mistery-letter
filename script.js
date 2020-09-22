@@ -16,6 +16,16 @@ function addClass(tag) {
   tag.classList.add(tiltGroup[positionClassRandom(tiltGroup)]);
 }
 
+function removeClassTag(tag) {
+  arrayClassName = [];
+  tag.classList.forEach((item) => {
+    arrayClassName.push(item);
+  });
+  arrayClassName.forEach((item) => {
+    tag.classList.remove(item);
+  });
+}
+
 function createTagSpan(arrayWords) {
   for(let index = 0; index < arrayWords.length; index += 1) {
     const tagSpan = document.createElement('span');
@@ -49,4 +59,10 @@ document.getElementById('criar-carta').addEventListener('click', function () {
   const inputText = document.querySelector('#carta-texto')
   const resultBoolean = checksInputEmpty(inputText);
   generateLetter(resultBoolean, inputText.value);
+});
+
+cartaGerada.addEventListener('click', function (event) {
+  tag = event.target;
+  removeClassTag(tag);
+  addClass(tag);
 });
