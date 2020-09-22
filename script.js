@@ -11,16 +11,21 @@ const count = document.querySelector('#carta-contador');
 
 
 function randomIndex(position) {
+  console.log(position);
   return (Math.floor(Math.random() * (classGroup[position].length)));
 }
 
 function giveAClass(paragraph) {
-  let classes;
+  let classes = '';
   const paragraphArray = paragraph.children
   for (let index = 0; index < paragraphArray.length; index += 1) {
     classes = '';
     for (let key in classGroup) {
-      classes += `${(classGroup[key])[randomIndex(key)]} `;
+      if (key === 'skewGroup') {
+        classes += `${(classGroup[key])[randomIndex(key)]}`;  
+      } else {
+        classes += `${(classGroup[key])[randomIndex(key)]} `;
+      }
     }
     paragraphArray[index].className = classes;
   }
@@ -40,7 +45,7 @@ function countWord(textArray) {
   for (let index = 0; index < textArray.length; index += 1) {
     numbersOfWords += 1;
   }
-  count.innerText = `Total de ${numbersOfWords} palavras!`
+  count.innerText = numbersOfWords;
 }
 
 function testInput(textArray) {
