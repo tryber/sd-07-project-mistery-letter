@@ -37,7 +37,11 @@ function createTagSpan(arrayWords) {
 }
 
 function generateArrayOfWords(phrase) {
-  const arrayWords = phrase.split(' ');
+  const arrayWords = [];
+  if (phrase.length === 0 ) {
+    return arrayWords;
+  }
+  arrayWords = phrase.split(' ');
   return arrayWords;
 }
 
