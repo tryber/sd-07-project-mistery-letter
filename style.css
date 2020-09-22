@@ -19,8 +19,9 @@ h1 {
 
 section {
   display: flex;
-  width: 100%;
   justify-content: center;
+  margin-bottom: 100px;
+  width: 100%;
 }
 
 .container {
@@ -34,6 +35,11 @@ input {
   flex: 3 1 auto;
   font-family: 'Baloo Tammudu 2', sans-serif;
   font-size: 17pt;
+}
+
+
+input:focus { /* Isaac */
+  border-bottom: 5px solid rgb(82 , 31 , 223);
 }
 
 input::placeholder {
@@ -57,6 +63,7 @@ button:hover {
 }
 
 p {
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -110,4 +117,10 @@ p {
 
 .skewright {
   transform: skewX(-10deg);
+}
+
+.count {
+  background-color: rgb(66 , 124 , 223);
+  color: white;
+  font-family: 'Baloo Tammudu 2', sans-serif;
 }
