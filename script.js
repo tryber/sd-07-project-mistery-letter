@@ -14,10 +14,10 @@ function randomIndex(position) {
   return (Math.floor(Math.random() * (classGroup[position].length)));
 }
 
-function giveAClassPartTwo(index, classes, paragraphArray) {
-  classes = '';
-  let keys = Object.keys(classGroup)
-  
+function giveAClassPartTwo(index, paragraphArray) {
+  let classes = '';
+  let keys = Object.keys(classGroup);
+
   keys.forEach(function (key) {
     if (key === 'skewGroup') {
       classes += `${(classGroup[key])[randomIndex(key)]}`;
@@ -29,11 +29,10 @@ function giveAClassPartTwo(index, classes, paragraphArray) {
 }
 
 function giveAClassPartOne() {
-  let classes = '';
   const paragraphArray = paragraph.children;
-  
+
   for (let index = 0; index < paragraphArray.length; index += 1) {
-    giveAClassPartTwo(index, classes, paragraphArray);  
+    giveAClassPartTwo(index, paragraphArray);
   }
 }
 
