@@ -1,49 +1,49 @@
 .input-carta {
   font-size: 18px;
-  margin-top: 150px;
-  margin-left: 200px;
   margin-bottom: 100px;
+  margin-left: 200px;
+  margin-top: 150px;
   width: 60%;
 }
 
 .button-carta {
-  margin-left: 5px;
   font-size: 18px;
+  margin-left: 5px;
 }
 
 .p-carta {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   font-size: 20px;
+  justify-content: center;
   margin-bottom: 50px;
 }
 
 .contador {
   display: flex;
-  justify-content: center;
   font-size: 25px;
   font-weight: 900;
+  justify-content: center;
 }
 
 .newspaper {
   background-color: antiquewhite;
-  font-family: Times New Roman;
+  font-family: Times New Roman, Times;
   font-weight: 900;
 }
 
 .magazine1 {
   background-color: teal;
   color: white;
-  font-family: Verdana;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
 }
 
 .magazine2 {
-  background-image: url("images/pink-pattern.png");
+  background-image: url('images/pink-pattern.png');
   color: fuchsia;
-  font-family: Verdana;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 900;
 }
 

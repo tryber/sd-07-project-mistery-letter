@@ -8,7 +8,7 @@ const tam = ['medium', 'big', 'reallybig'];
 const rot = ['rotateleft', 'rotateright'];
 const inc = ['skewleft', 'skewright'];
 
-function geraClasses() {      
+function geraClasses() {
   const estilos = est[Math.round(Math.random() * (est.length - 1))];
   const tamanhos = tam[Math.round(Math.random() * (tam.length - 1))];
   const rotacao = rot[Math.round(Math.random() * (rot.length - 1))];
@@ -24,9 +24,9 @@ criarCarta.addEventListener('click', () => {
   } else {
     let count = 0;
     cartaGerada.innerText = '';
-    let textoCarta = cartaTexto.value.trim().split(' ');
+    const textoCarta = cartaTexto.value.trim().split(' ');
     for (let index = 0; index < textoCarta.length; index += 1) {
-      let spans = document.createElement('span');
+      const spans = document.createElement('span');
       spans.style.display = 'inline-block';
       spans.classList.add(geraClasses());
       spans.classList.add(geraClasses());
