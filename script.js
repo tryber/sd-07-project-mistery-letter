@@ -20,8 +20,9 @@ console.log(geraClasses());
 
 criarCarta.addEventListener('click', () => {
     if (cartaTexto.value === '' || !cartaTexto.value.trim()) {
-        alert('Por favor, digite o conteúdo da carta.');
+        cartaGerada.innerText = 'Por favor, digite o conteúdo da carta.';
     } else {
+        cartaGerada.innerText = '';
         let textoCarta = cartaTexto.value.trim().split(' ');
         console.log(textoCarta);
     for (let index = 0; index < textoCarta.length; index += 1) {
