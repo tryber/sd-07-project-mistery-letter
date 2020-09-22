@@ -36,7 +36,7 @@ criarCarta.addEventListener('click', () => {
             spans.innerText = textoCarta[index];
             cartaGerada.appendChild(spans);
             count += 1;
-            contador.innerText = `Qtd. de palavras ${count}`;
+            contador.innerText = `${count}`;
         }
     }
     }
