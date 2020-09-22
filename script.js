@@ -16,7 +16,7 @@ function randomIndex(position) {
 
 function giveAClassPartTwo(index, paragraphArray) {
   let classes = '';
-  let keys = Object.keys(classGroup);
+  const keys = Object.keys(classGroup);
 
   keys.forEach(function (key) {
     if (key === 'skewGroup') {
