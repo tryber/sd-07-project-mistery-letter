@@ -6,7 +6,7 @@
 .cartaContador {
   background-color: coral;
   color: white;
-  font-weight: bold;
+  font-weight: 700;
   margin-top: 30px;
   text-align: center;
   width: 200px;
@@ -28,8 +28,8 @@
 
 .newspaper {
   background-color: antiquewhite;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: bold;
+  font-family: Times New Roman, Times, serif;
+  font-weight: 700;
 }
 
 .magazine1 {

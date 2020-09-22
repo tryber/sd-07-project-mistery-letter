@@ -18,7 +18,7 @@ function addClass(tag) {
 }
 
 function removeClassTag(tag) {
-  let arrayClassName = [];
+  const arrayClassName = [];
   tag.classList.forEach((item) => {
     arrayClassName.push(item);
   });
