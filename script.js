@@ -1,7 +1,8 @@
 const cartaGerada = document.getElementById('carta-gerada');
+const inputText = document.querySelector('#carta-texto');
 const styleGroup = ['newspaper', 'magazine1', 'magazine2'];
 const sizeGroup = ['medium', 'big', 'reallybig'];
-const  rotationGroup = ['rotateleft', 'rotateright'];
+const rotationGroup = ['rotateleft', 'rotateright'];
 const tiltGroup = ['skewleft', 'skewright'];
 
 function positionClassRandom(array) {
@@ -36,7 +37,7 @@ function createTagSpan(arrayWords) {
 }
 
 function generateArrayOfWords(phrase) {
-  const arrayWords = phrase.split(" ");
+  const arrayWords = phrase.split(' ');
   return arrayWords;
 }
 
@@ -55,10 +56,15 @@ function checksInputEmpty(inputText) {
   return true;
 }
 
+function countWords() {
+  const arrayWords =  generateArrayOfWords(inputText.value);
+  return arrayWords.length;
+}
+
 document.getElementById('criar-carta').addEventListener('click', function () {
-  const inputText = document.querySelector('#carta-texto')
   const resultBoolean = checksInputEmpty(inputText);
   generateLetter(resultBoolean, inputText.value);
+  document.getElementById('carta-contador').innerText =  `Contém ${countWords()} palavras`;
 });
 
 cartaGerada.addEventListener('click', function (event) {
