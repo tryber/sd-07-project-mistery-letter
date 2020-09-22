@@ -1,6 +1,7 @@
 const criarCarta = document.querySelector('#criar-carta');
 const cartaTexto = document.querySelector('#carta-texto');
 const cartaGerada = document.querySelector('#carta-gerada');
+const contador = document.querySelector('#carta-contador');
 
 const est = ['newspaper', 'magazine1', 'magazine2'];
 const tam = ['medium', 'big', 'reallybig'];
@@ -16,15 +17,14 @@ function geraClasses() {
    let classesRandom = classes[Math.round(Math.random() * (classes.length - 1))];
    return classesRandom;
 }
-console.log(geraClasses());
 
 criarCarta.addEventListener('click', () => {
     if (cartaTexto.value === '' || !cartaTexto.value.trim()) {
         cartaGerada.innerText = 'Por favor, digite o conteúdo da carta.';
     } else {
+        let count = 0;
         cartaGerada.innerText = '';
         let textoCarta = cartaTexto.value.trim().split(' ');
-        console.log(textoCarta);
     for (let index = 0; index < textoCarta.length; index += 1) {
         let spans = document.createElement('span');
         spans.style.display = 'inline-block';
@@ -34,9 +34,15 @@ criarCarta.addEventListener('click', () => {
         spans.classList.add(geraClasses());
         if (textoCarta[index].trim()) {
             spans.innerText = textoCarta[index];
-            cartaGerada.appendChild(spans);  
-        }       
+            cartaGerada.appendChild(spans);
+            count += 1;
+            contador.innerText = `Qtd. de palavras ${count}`;
+        }
     }
     }
     
+});
+
+cartaGerada.addEventListener('click', (event) => {
+  event.target.className = geraClasses();
 });
