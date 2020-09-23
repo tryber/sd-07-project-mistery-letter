@@ -1,7 +1,6 @@
-var inputText = document.getElementById('carta-texto');
-var text;
-
-var generateLetter = document.getElementById('carta-gerada');
+let inputText = document.getElementById('carta-texto');
+let generateLetter = document.getElementById('carta-gerada');
+let text;
 
 
 const style = ['newspaper', 'magazine1', 'magazine2'];
@@ -10,12 +9,12 @@ const rotate = ['rotateleft', 'rotateright'];
 const inclination = ['skewleft', 'skewright'];
 
 
-function styleGenerator(text) {
-  const x = style[Math.round(Math.random()*2)];
-  const y = size[Math.round(Math.random()*2)];
-  const z = rotate[Math.round(Math.random()*1)];
-  const w = inclination[Math.round(Math.random()*1)];
-  text.className = `${x} ${y} ${z} ${w}`;
+function styleGenerator(txt) {
+  const x = style[Math.round(Math.random() * 2)];
+  const y = size[Math.round(Math.random() * 2)];
+  const z = rotate[Math.round(Math.random() * 1)];
+  const w = inclination[Math.round(Math.random() * 1)];
+  txt.className = `${x} ${y} ${z} ${w}`;
 }
 
 
@@ -25,12 +24,12 @@ document.getElementById('criar-carta').addEventListener('click', function () {
     generateLetter.innerText = 'Por favor, digite o conteúdo da carta.';
   } else {
     const arrayWords = text.split(' ');
-  for (let index = 0; index < arrayWords.length; index += 1) {
+    for (let index = 0; index < arrayWords.length; index += 1) {
     const createTagSpan = document.createElement('span');
-    createTagSpan.innerText = arrayWords[index]; 
+    createTagSpan.innerText = arrayWords[index];
     generateLetter.appendChild(createTagSpan);
     styleGenerator(createTagSpan);
-  } 
-  document.querySelector('#carta-contador').innerText = arrayWords.length; 
+  }
+    document.querySelector('#carta-contador').innerText = arrayWords.length;
   }
 });
