@@ -1,10 +1,9 @@
-const style = ['newspaper', 'magazine1', 'magazine2'];
-const size = ['medium', 'big', 'reallybig'];
-const rotate = ['rotateleft', 'rotateright'];
-const inclination = ['skewleft', 'skewright'];
-
-
 function styleGenerator(txt) {
+  const style = ['newspaper', 'magazine1', 'magazine2'];
+  const size = ['medium', 'big', 'reallybig'];
+  const rotate = ['rotateleft', 'rotateright'];
+  const inclination = ['skewleft', 'skewright'];
+
   const x = style[Math.round(Math.random() * 2)];
   const y = size[Math.round(Math.random() * 2)];
   const z = rotate[Math.round(Math.random() * 1)];
@@ -14,7 +13,7 @@ function styleGenerator(txt) {
 
 
 document.querySelector('#criar-carta').addEventListener('click', function () {
-  let text = document.querySelector('#carta-texto').value;
+  const text = document.querySelector('#carta-texto').value;
   if (text === '' || text === ' ') {
     document.getElementById('carta-gerada').innerText = 'Por favor, digite o conteúdo da carta.';
   } else {
