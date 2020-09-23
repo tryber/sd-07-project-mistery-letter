@@ -2,6 +2,7 @@
   background-color: antiquewhite;
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
+  display: inline-block;
 }
 
 .magazine1 {
@@ -10,6 +11,7 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
+  display: inline-block;
 }
 
 .magazine2 {
@@ -17,35 +19,47 @@
   color: fuchsia;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 900;
+  display: inline-block;
 }
 
 .medium {
   font-size: 20px;
   padding: 8px;
+  display: inline-block;
 }
 
 .big {
   font-size: 30px;
   padding: 10px;
+  display: inline-block;
 }
 
 .reallybig {
   font-size: 40px;
   padding: 15px;
+  display: inline-block;
 }
 
 .rotateleft {
   transform: rotate(-5deg);
+  display: inline-block;
 }
 
 .rotateright {
   transform: rotate(5deg);
+  display: inline-block;
 }
 
 .skewleft {
   transform: skewX(10deg);
+  display: inline-block;
 }
 
 .skewright {
   transform: skewX(-10deg);
+  display: inline-block;
+}
+
+span {
+  margin: 5px;
 }
