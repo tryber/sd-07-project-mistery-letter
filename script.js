@@ -1,10 +1,10 @@
 const inputLetter = document.querySelector('#carta-texto');
 const buttonLetter = document.querySelector('#criar-carta');
 const pLetter = document.querySelector('#carta-gerada');
-const arrayStyle = [`newspaper`, `magazine1`, `magazine2`];
-const arraySize = [`medium`, `big`, `reallybig`];
-const arrayRotation = [`rotateleft`, `rotateright`];
-const arrayInclination = [`skewleft`, `skewright`];
+const arrayStyle = ['newspaper', 'magazine1', 'magazine2'];
+const arraySize = ['medium', 'big', 'reallybig'];
+const arrayRotation = ['rotateleft', 'rotateright'];
+const arrayInclination = ['skewleft', 'skewright'];
 
 function addClassList() {
   const span = document.querySelectorAll('span');
