@@ -16,14 +16,14 @@ function createLetter() {
     }
 
     if (text === "") {
-      alert("Por favor, digite o conteúdo da carta.");
+      pLetter.innerText = "Por favor, digite o conteúdo da carta.";
     }
 
     for (let i = 0; i < text.length; i += 1) {
       if (text[i] !== " ") {
         break;
       } else {
-        alert("Por favor, digite o conteúdo da carta.");
+        pLetter.innerText = "Por favor, digite o conteúdo da carta.";
         break;
       }
     }
