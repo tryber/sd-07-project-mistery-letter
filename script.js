@@ -76,7 +76,7 @@ function count() {
   const countWord = document.querySelector("#carta-contador");
   const span = document.querySelectorAll("span");
 
-  countWord.innerText = `Contador de Palavras: ${span.length}`;
+  countWord.innerText = span.length;
 }
 
 window.onload = function () {
