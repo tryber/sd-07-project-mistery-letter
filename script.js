@@ -15,17 +15,7 @@ function styleGenerator(txt) {
 }
 
 
-document.querySelector('#criar-carta').addEventListener('click', function () {
-  const text = document.querySelector('#carta-texto').value;
-  if (text === '' || text === ' ') {
-    document.getElementById('carta-gerada').innerText = 'Por favor, digite o conteúdo da carta.';
-  } else {
-    createLetter (text);
-  }
-});
-
-
-function createLetter (text) {
+function createLetter(text) {
   const arrayWords = text.split(' ');
   for (let index = 0; index < arrayWords.length; index += 1) {
     const createTagSpan = document.createElement('span');
@@ -35,3 +25,13 @@ function createLetter (text) {
   }
   document.querySelector('#carta-contador').innerText = arrayWords.length;
 }
+
+
+document.querySelector('#criar-carta').addEventListener('click', function () {
+  const text = document.querySelector('#carta-texto').value;
+  if (text === '' || text === ' ') {
+    document.getElementById('carta-gerada').innerText = 'Por favor, digite o conteúdo da carta.';
+  } else {
+    createLetter(text);
+  }
+});
