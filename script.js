@@ -1,8 +1,3 @@
-let inputText = document.getElementById('carta-texto');
-let generateLetter = document.getElementById('carta-gerada');
-let text;
-
-
 const style = ['newspaper', 'magazine1', 'magazine2'];
 const size = ['medium', 'big', 'reallybig'];
 const rotate = ['rotateleft', 'rotateright'];
@@ -18,18 +13,18 @@ function styleGenerator(txt) {
 }
 
 
-document.getElementById('criar-carta').addEventListener('click', function () {
-  text = inputText.value;
+document.querySelector('#criar-carta').addEventListener('click', function () {
+  let text = document.querySelector('#carta-texto').value;
   if (text === '' || text === ' ') {
-    generateLetter.innerText = 'Por favor, digite o conteúdo da carta.';
+    document.getElementById('carta-gerada').innerText = 'Por favor, digite o conteúdo da carta.';
   } else {
     const arrayWords = text.split(' ');
     for (let index = 0; index < arrayWords.length; index += 1) {
-    const createTagSpan = document.createElement('span');
-    createTagSpan.innerText = arrayWords[index];
-    generateLetter.appendChild(createTagSpan);
-    styleGenerator(createTagSpan);
-  }
+      const createTagSpan = document.createElement('span');
+      createTagSpan.innerText = arrayWords[index];
+      document.getElementById('carta-gerada').appendChild(createTagSpan);
+      styleGenerator(createTagSpan);
+    }
     document.querySelector('#carta-contador').innerText = arrayWords.length;
   }
 });
