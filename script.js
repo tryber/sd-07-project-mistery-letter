@@ -24,16 +24,14 @@ btn.addEventListener('click', function () {
   if (text === '' || text === ' ') {
     generateLetter.innerText = 'Por favor, digite o conteúdo da carta.';
   } else {
-    span(text);
-  }
-});
-
-function span(text) {
-  const arrayWords = text.split(' ');
+    const arrayWords = text.split(' ');
   for (let index = 0; index < arrayWords.length; index += 1) {
     const createTagSpan = document.createElement('span');
     createTagSpan.innerText = arrayWords[index]; 
     generateLetter.appendChild(createTagSpan);
     styleGenerator(createTagSpan);
   } 
-}
+  document.querySelector('#carta-contador').innerText = arrayWords.length; 
+  }
+});
+
