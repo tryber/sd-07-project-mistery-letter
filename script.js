@@ -32,6 +32,7 @@ document.querySelector('#criar-carta').addEventListener('click', function () {
   if (text === '' || text === ' ') {
     document.getElementById('carta-gerada').innerText = 'Por favor, digite o conteúdo da carta.';
   } else {
+    document.getElementById('carta-gerada').innerHTML = '';
     createLetter(text);
   }
 });
