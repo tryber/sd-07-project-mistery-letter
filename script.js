@@ -2,7 +2,7 @@ var inputText = document.getElementById('carta-texto');
 var text;
 
 var generateLetter = document.getElementById('carta-gerada');
-var btn = document.getElementById('criar-carta');
+
 
 const style = ['newspaper', 'magazine1', 'magazine2'];
 const size = ['medium', 'big', 'reallybig'];
@@ -19,7 +19,7 @@ function styleGenerator(text) {
 }
 
 
-btn.addEventListener('click', function () {
+document.getElementById('criar-carta').addEventListener('click', function () {
   text = inputText.value;
   if (text === '' || text === ' ') {
     generateLetter.innerText = 'Por favor, digite o conteúdo da carta.';
@@ -34,4 +34,3 @@ btn.addEventListener('click', function () {
   document.querySelector('#carta-contador').innerText = arrayWords.length; 
   }
 });
-
