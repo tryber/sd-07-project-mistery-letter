@@ -1,11 +1,11 @@
-function contaPalavras (frase) {
-    let cont = 0;
-    for (let i = 0; i < frase.length; i++) {
-        if (frase[i] === ' ') {
-            cont++;
-        }
+function contaPalavras(frase) {
+  let cont = 0;
+  for (let index = 0; index < frase.length; index += 1) {
+    if (frase[index] === ' ') {
+      cont += 1;
     }
-    return cont + 1;
+  }
+  return cont + 1;
 }
 const botaoGerarCarta = document.getElementById('criar-carta');
 botaoGerarCarta.addEventListener('click', function () {
@@ -16,7 +16,7 @@ botaoGerarCarta.addEventListener('click', function () {
     pSaidaTextoDigitado.innerText = 'Por favor, digite o conteúdo da carta.';
   } else {
     qtdPalavras.innerText = contaPalavras(textoDigitado);
-    pSaidaTextoDigitado.innerText = textoDigitado;
+    pSaidaTextoDigitado.innerHTML = '<span>' + textoDigitado + '</span>';
     pSaidaTextoDigitado.classList.add('magazine2');
   }
 });
