@@ -1,5 +1,9 @@
 const btnCriarCarta = document.getElementById('criar-carta');
 
+const grupoEstilo = ['newspaper', 'magazine1', 'magazine2'];
+const grupoTamanho = ['medium', 'big', 'reallybig'];
+const grupoRotacao = ['rotateleft', 'rotateright'];
+const grupoInclinacao = ['skewleft', 'skewright'];
 
 const criaSpan = function (str) {
   let newSapn = document.createElement('span');
