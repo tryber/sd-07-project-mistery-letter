@@ -23,22 +23,26 @@ const checkText = function () {
   }
 
 const generateLetter = function () {
-    const inputCartaTexto = document.getElementById('carta-texto');
+    let insertedText = document.getElementById('carta-texto').value;
+    
     let elemPai = document.getElementById("carta-gerada");
     //elemPai.textContent = '';
 
     let newSpan;
 
     if (checkText()) {    
-    let text = inputCartaTexto.value.split(' ');
-        text.forEach(word => {
-            newSpan = criaSpan(word);      
+     insertedText = insertedText.split(' ');
+     console.log(insertedText)
+     insertedText.forEach(word => {
+            newSpan = criaSpan(word);
+            elemPai.appendChild(newSpan);      
     });
 
   } else {
     newSpan = criaSpan('Por favor, digite o conteúdo da carta.');
+    elemPai.appendChild(newSpan);
   }
-  elemPai.appendChild(newSpan);
+  
 }
 
 window.onload = function () {

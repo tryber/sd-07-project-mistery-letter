@@ -49,3 +49,7 @@
 .skewright {
     transform: skewX(-10deg);
 }
+
+span {
+    padding: 3px;
+}
