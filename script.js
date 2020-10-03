@@ -3,10 +3,14 @@ const paragrafo = document.getElementById('carta-gerada');
 const inputFrase = document.getElementById('carta-texto');
 
 const montaCarta = (array) => {
-  for (let index = 0; index < array.length; index += 1) {
-    const adiconaFilho = document.createElement('span');
-    adiconaFilho.innerText = `${array[index]} `;
-    paragrafo.appendChild(adiconaFilho);
+  if (array[0].length > 0) {
+    for (let index = 0; index < array.length; index += 1) {
+      const adiconaFilho = document.createElement('span');
+      adiconaFilho.innerText = `${array[index]} `;
+      paragrafo.appendChild(adiconaFilho);
+    }
+  } else {
+    alert('Por favor, digite o conteúdo da carta.');
   }
 };
 
