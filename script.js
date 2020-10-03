@@ -10,7 +10,7 @@ const montaCarta = (array) => {
       paragrafo.appendChild(adiconaFilho);
     }
   } else {
-    alert('Por favor, digite o conteúdo da carta.');
+    paragrafo.innerText = 'Por favor, digite o conteúdo da carta.';
   }
 };
 
