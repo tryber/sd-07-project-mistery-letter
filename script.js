@@ -10,7 +10,7 @@ const montaCarta = (array) => {
   if (array[0].length > 0) {
     for (let index = 0; index < array.length; index += 1) {
       const adiconaFilho = document.createElement('span');      
-      adiconaFilho.innerText = `${array[index]} `;
+      adiconaFilho.innerText = `${array[index]}` + ' ';
       const classesEstilos = criaEstilo();
       adiconaFilho.classList = `${classesEstilos[0]} ${classesEstilos[1]} ${classesEstilos[2]} ${classesEstilos[3]}`      
       paragrafo.appendChild(adiconaFilho);
