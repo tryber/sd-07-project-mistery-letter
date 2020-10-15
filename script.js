@@ -30,8 +30,7 @@ const montaCarta = (array) => {
   } else {
     paragrafo.innerText = 'Por favor, digite o conteúdo da carta.';    
   }
-  addEventClickOnSpan();
-  qtdPalavras.innerText = document.querySelectorAll('span').length;
+  addEventClickOnSpan();  
 };
 
 const criaEstilo = () => {
