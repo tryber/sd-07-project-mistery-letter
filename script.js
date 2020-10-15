@@ -18,6 +18,7 @@ function addEventClickOnSpan() {
 }
 
 const montaCarta = (array) => {
+  qtdPalavras.innerHTML = array.length;
   if (array[0].length > 0) {
     for (let index = 0; index < array.length; index += 1) {
       const adiconaFilho = document.createElement('span');
@@ -49,6 +50,6 @@ botaoGerar.addEventListener('click', function () {
   paragrafo.innerHTML = '';
   const frase = inputFrase.value;
   const arrayPalavras = frase.split(' ');
-  qtdPalavras.innerHTML = arrayPalavras.length;
+  // qtdPalavras.innerHTML = arrayPalavras.length;
   montaCarta(arrayPalavras);
 });
