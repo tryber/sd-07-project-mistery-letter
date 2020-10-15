@@ -17,8 +17,7 @@ function addEventClickOnSpan() {
 })
 }
 
-const montaCarta = (array) => {
-  qtdPalavras.innerHTML = array.length;
+const montaCarta = (array) => {  
   if (array[0].length > 0) {
     for (let index = 0; index < array.length; index += 1) {
       const adiconaFilho = document.createElement('span');
@@ -35,6 +34,7 @@ const montaCarta = (array) => {
     // qtdPalavras.innerText = 0;
   }
   addEventClickOnSpan();
+  qtdPalavras.innerText = document.querySelectorAll('span').length;
 };
 
 const criaEstilo = () => {
