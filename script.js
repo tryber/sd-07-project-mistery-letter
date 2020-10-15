@@ -25,7 +25,7 @@ const montaCarta = (array) => {
       const classesEstilos = criaEstilo()
       adiconaFilho.classList = `${classesEstilos[0]} ${classesEstilos[1]} ${classesEstilos[2]} ${classesEstilos[3]}`
       paragrafo.appendChild(adiconaFilho);
-      const adiconaEspaco = document.createElement('span');
+      const adiconaEspaco = document.createElement('b');
       adiconaEspaco.innerText = ' ';
       paragrafo.appendChild(adiconaEspaco);
     }
