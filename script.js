@@ -7,15 +7,14 @@ const groupSize = ['medium', 'big', 'reallybig'];
 const groupRotation = ['rotateleft', 'rotateright'];
 const groupSlop = ['skewleft', 'skewright'];
 
-function addEventClickOnSpan() {
-  
+function addEventClickOnSpan() {  
   document.querySelectorAll('span').forEach(item => {
     item.addEventListener('click', event => {
       const classesEstilos = criaEstilo();
       item.classList = `${classesEstilos[0]} ${classesEstilos[1]} ${classesEstilos[2]} ${classesEstilos[3]}`;
     })
-})
-}
+  });
+};
 
 const montaCarta = (array) => {  
   if (array[0].length > 0) {
@@ -30,8 +29,7 @@ const montaCarta = (array) => {
       paragrafo.appendChild(adiconaEspaco);
     }
   } else {
-    paragrafo.innerText = 'Por favor, digite o conteúdo da carta.';
-    // qtdPalavras.innerText = 0;
+    paragrafo.innerText = 'Por favor, digite o conteúdo da carta.';    
   }
   addEventClickOnSpan();
   qtdPalavras.innerText = document.querySelectorAll('span').length;
@@ -50,6 +48,5 @@ botaoGerar.addEventListener('click', function () {
   paragrafo.innerHTML = '';
   const frase = inputFrase.value;
   const arrayPalavras = frase.split(' ');
-  // qtdPalavras.innerHTML = arrayPalavras.length;
   montaCarta(arrayPalavras);
 });
