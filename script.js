@@ -32,7 +32,7 @@ const montaCarta = (array) => {
     }
   } else {
     paragrafo.innerText = 'Por favor, digite o conteúdo da carta.';
-    qtdPalavras.innerText = 0;
+    // qtdPalavras.innerText = 0;
   }
   addEventClickOnSpan();
 };
