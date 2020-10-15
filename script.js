@@ -1,6 +1,5 @@
 const botaoGerar = document.getElementById('criar-carta');
 const paragrafo = document.getElementById('carta-gerada');
-const qtdPalavras = document.getElementById('carta-contador');
 const inputFrase = document.getElementById('carta-texto');
 const groupStyle = ['newspaper', 'magazine1', 'magazine2'];
 const groupSize = ['medium', 'big', 'reallybig'];
