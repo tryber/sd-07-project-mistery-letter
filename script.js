@@ -10,10 +10,14 @@ const montaCarta = (array) => {
   if (array[0].length > 0) {
     for (let index = 0; index < array.length; index += 1) {
       const adiconaFilho = document.createElement('span');      
-      adiconaFilho.innerText = `${array[index]}` + ' ';
-      const classesEstilos = criaEstilo();
+      adiconaFilho.innerText = `${array[index]}`;
+      const classesEstilos = criaEstilo()
       adiconaFilho.classList = `${classesEstilos[0]} ${classesEstilos[1]} ${classesEstilos[2]} ${classesEstilos[3]}`      
       paragrafo.appendChild(adiconaFilho);
+      
+      const adiconaEspaco = document.createElement('i');
+      adiconaEspaco.innerText = ' ';
+      paragrafo.appendChild(adiconaEspaco);
     }
   } else {
     paragrafo.innerText = 'Por favor, digite o conteúdo da carta.';
