@@ -6,16 +6,26 @@ const groupSize = ['medium', 'big', 'reallybig'];
 const groupRotation = ['rotateleft', 'rotateright'];
 const groupSlop = ['skewleft', 'skewright'];
 
-function addEventClickOnSpan() {  
-  document.querySelectorAll('span').forEach(item => {
-    item.addEventListener('click', event => {
-      const classesEstilos = criaEstilo();
-      item.classList = `${classesEstilos[0]} ${classesEstilos[1]} ${classesEstilos[2]} ${classesEstilos[3]}`;
-    })
-  });
+const criaEstilo = () => {
+  const estiloUnico = [];
+  estiloUnico.push(groupStyle[parseInt(((Math.random()) * 3), 0)]);
+  estiloUnico.push(groupSize[parseInt(((Math.random()) * 3), 0)]);
+  estiloUnico.push(groupRotation[parseInt(((Math.random()) * 2), 0)]);
+  estiloUnico.push(groupSlop[parseInt(((Math.random()) * 2), 0)]);
+  return estiloUnico;
 };
 
-const montaCarta = (array) => {  
+function addEventClickOnSpan() {
+  document.querySelectorAll('span').forEach((item) => {
+    item.addEventListener('click', (event) => {
+      const palavra = event.target;
+      const classesEstilos = criaEstilo();
+      palavra.classList = `${classesEstilos[0]} ${classesEstilos[1]} ${classesEstilos[2]} ${classesEstilos[3]}`;
+    });
+  });
+}
+
+const montaCarta = (array) => {
   if (array[0].length > 0) {
     for (let index = 0; index < array.length; index += 1) {
       const adiconaFilho = document.createElement('span');
@@ -28,19 +38,10 @@ const montaCarta = (array) => {
       paragrafo.appendChild(adiconaEspaco);
     }
   } else {
-    paragrafo.innerText = 'Por favor, digite o conteúdo da carta.';    
+    paragrafo.innerText = 'Por favor, digite o conteúdo da carta.';
   }
-  addEventClickOnSpan();  
+  addEventClickOnSpan();
 };
-
-const criaEstilo = () => {
-  const estiloUnico =[];
-  estiloUnico.push(groupStyle[parseInt(((Math.random()) * 3), 0)]);
-  estiloUnico.push(groupSize[parseInt(((Math.random()) * 3), 0)]);
-  estiloUnico.push(groupRotation[parseInt(((Math.random()) * 2), 0)]);
-  estiloUnico.push(groupSlop[parseInt(((Math.random()) * 2), 0)]);
-  return estiloUnico;
-}
 
 botaoGerar.addEventListener('click', function () {
   paragrafo.innerHTML = '';
