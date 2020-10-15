@@ -1,5 +1,6 @@
 const botaoGerar = document.getElementById('criar-carta');
 const paragrafo = document.getElementById('carta-gerada');
+const qtdPalavras = document.getElementById('carta-contador');
 const inputFrase = document.getElementById('carta-texto');
 const groupStyle = ['newspaper', 'magazine1', 'magazine2'];
 const groupSize = ['medium', 'big', 'reallybig'];
@@ -31,6 +32,7 @@ const montaCarta = (array) => {
     }
   } else {
     paragrafo.innerText = 'Por favor, digite o conteúdo da carta.';
+    qtdPalavras.innerText = 0;
   }
   addEventClickOnSpan();
 };
@@ -48,5 +50,6 @@ botaoGerar.addEventListener('click', function () {
   paragrafo.innerHTML = '';
   const frase = inputFrase.value;
   const arrayPalavras = frase.split(' ');
+  qtdPalavras.innerText = arrayPalavras.length;
   montaCarta(arrayPalavras);
 });
