@@ -50,6 +50,6 @@ botaoGerar.addEventListener('click', function () {
   paragrafo.innerHTML = '';
   const frase = inputFrase.value;
   const arrayPalavras = frase.split(' ');
-  qtdPalavras.innerText = arrayPalavras.length;
+  // qtdPalavras.innerText = arrayPalavras.length;
   montaCarta(arrayPalavras);
 });
