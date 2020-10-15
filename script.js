@@ -12,19 +12,18 @@ function addEventClickOnSpan() {
   document.querySelectorAll('span').forEach(item => {
     item.addEventListener('click', event => {
       const classesEstilos = criaEstilo();
-      item.classList = `${classesEstilos[0]} ${classesEstilos[1]} ${classesEstilos[2]} ${classesEstilos[3]}`
+      item.classList = `${classesEstilos[0]} ${classesEstilos[1]} ${classesEstilos[2]} ${classesEstilos[3]}`;
     })
 })
-
 }
 
 const montaCarta = (array) => {
   if (array[0].length > 0) {
     for (let index = 0; index < array.length; index += 1) {
-      const adiconaFilho = document.createElement('span');      
+      const adiconaFilho = document.createElement('span');
       adiconaFilho.innerText = `${array[index]}`;
-      const classesEstilos = criaEstilo()
-      adiconaFilho.classList = `${classesEstilos[0]} ${classesEstilos[1]} ${classesEstilos[2]} ${classesEstilos[3]}`
+      const classesEstilos = criaEstilo();
+      adiconaFilho.classList = `${classesEstilos[0]} ${classesEstilos[1]} ${classesEstilos[2]} ${classesEstilos[3]}`;
       paragrafo.appendChild(adiconaFilho);
       const adiconaEspaco = document.createElement('b');
       adiconaEspaco.innerText = ' ';
@@ -50,6 +49,6 @@ botaoGerar.addEventListener('click', function () {
   paragrafo.innerHTML = '';
   const frase = inputFrase.value;
   const arrayPalavras = frase.split(' ');
-  // qtdPalavras.innerText = arrayPalavras.length;
+  qtdPalavras.innerHTML = arrayPalavras.length;
   montaCarta(arrayPalavras);
 });
