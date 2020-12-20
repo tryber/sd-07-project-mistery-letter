@@ -3,7 +3,7 @@ function random(num) {
 }
 
 function classes() {
-  const estilo = ['newspaper', 'magazine1', 'magazine2'];
+  const estilo = ['newspaper', 'newspaper2', 'newspaper3', 'newspaper4', 'magazine1', 'magazine2', 'magazine3'];
   const tamanho = ['medium', 'big', 'reallybig'];
   const rotacao = ['rotateleft', 'rotateright'];
   const inclinacao = ['skewleft', 'skewright'];
@@ -14,7 +14,6 @@ function classes() {
   allClasses.push(inclinacao[random(2)]);
   return allClasses;
 }
-console.log(classes());
 const btCarta = document.getElementById('criar-carta');
 
 btCarta.addEventListener('click', () => {
