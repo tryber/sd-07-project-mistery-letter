@@ -3,12 +3,12 @@ function random(num) {
 }
 
 function classes() {
-  const estilo = ['newspaper', 'newspaper2', 'newspaper3', 'newspaper4', 'magazine1', 'magazine2', 'magazine3'];
+  const estilo = ['newspaper', 'magazine1', 'magazine2'];
   const tamanho = ['medium', 'big', 'reallybig'];
   const rotacao = ['rotateleft', 'rotateright'];
   const inclinacao = ['skewleft', 'skewright'];
   const allClasses = [];
-  allClasses.push(estilo[random(7)]);
+  allClasses.push(estilo[random(3)]);
   allClasses.push(tamanho[random(3)]);
   allClasses.push(rotacao[random(2)]);
   allClasses.push(inclinacao[random(2)]);
