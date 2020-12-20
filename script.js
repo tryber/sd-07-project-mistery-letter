@@ -3,7 +3,7 @@ function random(num) {
 }
 
 function classes() {
-  const estilo = ['newspaper1', 'newspaper2', 'newspaper3', 'newspaper4', 'magazine1', 'magazine2', 'magazine3'];
+  const estilo = ['newspaper', 'newspaper2', 'newspaper3', 'newspaper4', 'magazine1', 'magazine2', 'magazine3'];
   const tamanho = ['medium', 'big', 'reallybig'];
   const rotacao = ['rotateleft', 'rotateright'];
   const inclinacao = ['skewleft', 'skewright'];
@@ -21,6 +21,7 @@ btCarta.addEventListener('click', () => {
   const inputTexto = document.getElementById('carta-texto');
   const pContador = document.querySelector('#carta-contador');
   const pCarta = document.querySelector('#carta-gerada');
+  inputTexto.value = inputTexto.value.trim();
   if (inputTexto.value) {
     pCarta.innerText = ' ';
     const textoCarta = (inputTexto.value).trim().split(' ');
@@ -34,8 +35,9 @@ btCarta.addEventListener('click', () => {
       span.id = `${span.innerText}${i}`;
       pCarta.appendChild(span);
     }
-    pContador.innerText = pCarta.innerText.length;
-  } else {
+    const span = document.getElementsByTagName('span');
+    pContador.innerText = span.length;
+  } else if (!pCarta.innerText) {
     pCarta.innerText = 'Por favor, digite o conteúdo da carta.';
     pContador.innerText = '';
   }
