@@ -1,0 +1,109 @@
+body {
+  background-image: url('./images/bkground.jpg');
+  color: rgb( 41 , 17 , 17 );
+  font-family: Chancery, cursive, sans-serif;
+  font-size: 200%;
+  font-style: oblique;
+  text-align: center;
+}
+
+.container1 {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.bt-input {
+  background-color: rgb( 228 , 225 , 219 );
+  cursor: pointer;
+  font-family: cursive;
+  font-size: 80%;
+  height: 45px;
+  width: 20%;
+}
+
+.input-text {
+  font-size: 90%;
+  height: 40px;
+  margin: 5px;
+  width: 60%;
+}
+
+.newspaper1 {
+  background-color: antiquewhite;
+  font-family: Times New Roman, serif;
+  font-weight: 900;
+}
+
+.newspaper2 {
+  background-color: rgb( 187 , 120 , 33 );
+  font-family: Times New Roman, serif;
+  font-weight: 600;
+}
+
+.newspaper3 {
+  background-color: rgb( 20 , 20 , 19 );
+  color: rgb( 228 , 225 , 219 );
+  font-family: Times New Roman, serif;
+  font-weight: 900;
+}
+
+.newspaper4 {
+  background-color: rgb( 128 , 3 , 45 );
+  color: rgb( 228 , 225 , 219 );
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+}
+
+.magazine1 {
+  background-color: teal;
+  color: white;
+  font-family: Verdana, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.magazine2 {
+  background-image: url('./images/pink-pattern.png');
+  color: fuchsia;
+  font-family: Verdana, sans-serif;
+  font-weight: 900;
+}
+
+.magazine3 {
+  background-image: url('./images/yellow-pattern.png');
+  color: brown;
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+}
+
+.medium {
+  font-size: 20px;
+  padding: 8px;
+}
+
+.big {
+  font-size: 30px;
+  padding: 10px;
+}
+
+.reallybig {
+  font-size: 40px;
+  padding: 15px;
+}
+
+.rotateleft {
+  transform: rotate(-5deg);
+}
+
+.rotateright {
+  transform: rotate(5deg);
+}
+
+.skewleft {
+  transform: skewX(10deg);
+}
+
+.skewright {
+  transform: skewX(-10deg);
+}
